@@ -1,0 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  height: 25%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @include tablet {
+    justify-content: space-between;
+  }
+
+  &__textlogowrap {
+    height: 15rem;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    background-color: $primary-color-1;
+  }
+
+  &__textlogo {
+    height: 15rem;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__visuallogowrap {
+    height: 13rem;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+  }
+
+  &__visuallogo {
+    height: 12rem;
+  }
+}
