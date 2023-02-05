@@ -1,6 +1,14 @@
 @font-face {
   font-family: "AlbertusMT";
-  src: url("../../assets/AlbertusMT.otf") format("OpenType");
+  src: url("../../assets/fonts/AlbertusMT.otf") format("OpenType");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TorontoSubway";
+  src: url("../../assets/fonts/Toronto-Subway-W01-Regular.ttf")
+    format("OpenType");
   font-weight: 400;
   font-style: normal;
 }
