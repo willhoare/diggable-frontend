@@ -1,0 +1,16 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.allArtists {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &__wrap {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

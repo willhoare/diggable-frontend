@@ -12,7 +12,6 @@ import axios from "axios";
 function App() {
   return (
     <>
-      <h1>testing</h1>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>

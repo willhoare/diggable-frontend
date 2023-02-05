@@ -4,40 +4,41 @@ import { useParams } from "react-router-dom";
 import "./HomePage.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import ArtistCard from "../../components/ArtistCard/ArtistCard";
 
 export default HomePage;
 
-function HomePage({ videos }) {
-  const [currentVideo, setCurrentVideo] = useState(null);
-  const params = useParams();
-  const id = params.id || "84e96018-4022-434e-80bf-000ce4cd12b8";
+function HomePage() {
+  const [artistList, setArtistList] = useState([]);
+  const artistUrl = "http://localhost:8080/artists";
 
-  //   useEffect(() => {
-  //     const getVid = async () => {
-  //       const { data } = await axios.get(`http://localhost:8080/videos/${id}`);
-  //       setCurrentVideo(data);
-  //     };
-  //     getVid();
-  //   }, [id]);
+  useEffect(() => {
+    const getArtists = async () => {
+      const { data } = await axios.get(artistUrl);
+      setArtistList(data);
+      console.log(data);
+    };
+    getArtists();
+  }, []);
 
-  //   const [removeVid, setNextVideos] = useState([]);
+  if (!artistList) {
+    return <h1 className="Loading">Loading...</h1>;
+  }
 
-  //   useEffect(() => {
-  //     const getVids = async () => {
-  //       const { data } = await axios.get(`http://localhost:8080/videos`);
-  //       const vidData = data.filter((vid) => vid.id !== params.id);
-  //       setNextVideos(vidData);
-  //     };
-  //     getVids();
-  //   }, [id]);
-
-  //   if (!currentVideo) {
-  //     return <h1 className="Loading">Loading...</h1>;
-  //   }
   return (
     <>
       <Header />
-      <h1>Hello there</h1>
+      <h1>Featured Artists</h1>
+
+      <div className="allArtists__wrap">
+        <div className="allArtists">
+          <ArtistCard artistList={artistList} />
+        </div>
+      </div>
+
+      <div>
+        <Footer />
+      </div>
     </>
   );
 }

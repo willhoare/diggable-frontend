@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.cardContainer {
+  height: 10rem;
+  width: 30rem;
+  background-color: $primary-color-1;
+  border: solid $secondary-color-1 4px;
+  display: flex;
+
+  &__image {
+    object-fit: cover;
+  }
+}
+
+.artistCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
