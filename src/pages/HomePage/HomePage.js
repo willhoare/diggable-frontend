@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import { useParams } from "react-router-dom";
 import "./HomePage.scss";
 import Header from "../../components/Header/Header";
@@ -24,12 +26,15 @@ function HomePage() {
   if (!artistList) {
     return <h1 className="Loading">Loading...</h1>;
   }
+  // return artistList.map((artist) => {
+  //   let id = artist.id;
 
   return (
     <>
       <Header />
-      <h1>Featured Artists</h1>
-
+      <div className="headline">
+        <h1>Featured Artists</h1>
+      </div>
       <div className="allArtists__wrap">
         <div className="allArtists">
           <ArtistCard artistList={artistList} />

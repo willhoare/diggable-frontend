@@ -5,6 +5,8 @@ import "./CampaignPage.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
+import beatles from "../../assets/images/284152.jpeg";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default CampaignPage;
 
@@ -34,11 +36,22 @@ function CampaignPage() {
 
   return (
     <>
-      <section>
+      <header>
         <Header />
-        <h1>testing</h1>
+      </header>
+
+      <section className="pageorder">
+        <div className="hero">
+          <img className="hero__image" src={beatles} />
+        </div>
         <div>{currentArtist && <h1>{currentArtist.artistname}</h1>}</div>
       </section>
+      <article className="sidebar">
+        <Sidebar />
+      </article>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

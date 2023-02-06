@@ -1,7 +1,7 @@
 import "./Header.scss";
 import textlogo from "../../assets/logos/cropped.png";
 import visuallogo from "../../assets/logos/fac-1.jpg";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default Header;
 
@@ -29,16 +29,20 @@ function Header() {
           </NavLink>
         </div>
       </div>
+
       <nav className="navbar">
-        <div className="navbar__pages">
-          <h2>Home</h2>
-          <h2>Local</h2>
-          <h2>Campaigns</h2>
-          <h2>News</h2>
+        {/* <div className="navbar__pages pullup"> */}
+        <div class="container lime pullUp">
+          <h2>HOME</h2>
+          <h2>DISCOVER</h2>
+          <h2>NEWS</h2>
+          <h2>CAMPAIGNS</h2>
         </div>
-        <div className="navbar__login">
-          <h2>Login</h2>
+
+        <div className="container lime pullUp navbar__login">
+          <h2>LOG IN</h2>
         </div>
+        {/* </div> */}
       </nav>
     </header>
   );

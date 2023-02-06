@@ -21,9 +21,9 @@ function Header() {
         </NavLink>
       </div>
       <div className="socialIcons">
-        <img src={facebookIcon} />
-        <img src={instaIcon} />
-        <img src={twitterIcon} />
+        <img className="socialIcon" src={facebookIcon} />
+        <img className="socialIcon" src={instaIcon} />
+        <img className="socialIcon" src={twitterIcon} />
       </div>
       <div>Contact</div>
       <div>Terms of use</div>

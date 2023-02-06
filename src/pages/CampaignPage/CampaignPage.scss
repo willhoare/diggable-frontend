@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.hero {
+  margin-left: 5rem;
+
+  &__image {
+    width: 90%;
+    border-bottom: solid $secondary-color-1 5px;
+    box-shadow: 5px 5px;
+    aspect-ratio: 14/9;
+  }
+}
+
+.sidebar {
+  flex-direction: row;
+}
+
+.pageorder {
+  display: flex;
+}
