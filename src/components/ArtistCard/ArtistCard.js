@@ -1,7 +1,5 @@
 import "./ArtistCard.scss";
-import { useState, useEffect } from "react";
-
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ArtistCard = ({ artistList, setArtistList }) => {
   const artistCard = artistList.map((artist) => {
@@ -9,7 +7,11 @@ const ArtistCard = ({ artistList, setArtistList }) => {
       <section className="artistCards">
         <Link to={`/artists/${artist.id}`}>
           <div className="cardContainer">
-            <img className="cardContainer__image" src={artist.image} />
+            <img
+              className="cardContainer__image"
+              src={artist.image}
+              alt="image of featured band"
+            />
             <h2>{artist.artistname}</h2>
           </div>
         </Link>
