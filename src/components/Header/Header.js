@@ -36,7 +36,9 @@ function Header() {
           <NavLink to="/">
             <h2>HOME</h2>{" "}
           </NavLink>
-          <h2>DISCOVER</h2>
+          <NavLink to="/createcampaign">
+            <h2>CREATE CAMPAIGN</h2>
+          </NavLink>
           <h2>NEWS</h2>
           <h2>CAMPAIGNS</h2>
         </div>
