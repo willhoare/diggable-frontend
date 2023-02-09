@@ -11,12 +11,10 @@ function Sidebar({ currentArtist }) {
     let goal = campaigns.goal;
     let tourdates = new Date(campaigns.tourdates).toLocaleDateString();
 
-    console.log(title);
-
     return (
       <section>
         <h1></h1>
-        <div>
+        <div className="sidebar__description">
           <h2>{description}</h2>
         </div>
       </section>

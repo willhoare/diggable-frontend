@@ -57,12 +57,13 @@
 .navbar {
   background-color: $primary-color-1;
   display: flex;
-  flex-direction: row;
+  // flex-direction: row !important;
   justify-content: space-between;
   margin-left: 5rem;
+  flex-wrap: nowrap !important;
 
   @include mobile {
-    display: none;
+    display: none !important;
   }
 
   &__pages {

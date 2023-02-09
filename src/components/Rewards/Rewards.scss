@@ -1,2 +1,20 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.rewards {
+  &__container {
+    border: solid green 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__card {
+    border: yellow solid 2px;
+    background-color: white;
+    color: $primary-color-2;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+}

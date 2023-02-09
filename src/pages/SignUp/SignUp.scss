@@ -5,9 +5,4 @@
   background-color: $primary-color-1;
   display: flex;
   justify-content: center;
-
-  @include tablet {
-    margin-left: 5rem;
-    margin-top: 2rem;
-  }
 }

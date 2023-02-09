@@ -1,9 +1,10 @@
 import "./Footer.scss";
 import textlogo from "../../assets/logos/cropped.png";
 import { NavLink } from "react-router-dom";
-import instaIcon from "../../assets/icons/icons8-instagram-24.png";
-import facebookIcon from "../../assets/icons/icons8-facebook-24.png";
-import twitterIcon from "../../assets/icons/icons8-twitter-24.png";
+import instaIcon from "../../assets/icons/Icon-instagram.svg";
+import facebookIcon from "../../assets/icons/Icon-facebook.svg";
+import twitterIcon from "../../assets/icons/Icon-twitter.svg";
+import footerLogo from "../../assets/logos/png/logo-white.png";
 
 export default Header;
 
@@ -14,7 +15,7 @@ function Header() {
         <NavLink to="/">
           <img
             className="footer__textlogo"
-            src={textlogo}
+            src={footerLogo}
             alt="site logo"
           ></img>
         </NavLink>
@@ -24,8 +25,13 @@ function Header() {
         <img className="socialIcon" src={instaIcon} alt="instagram icon" />
         <img className="socialIcon" src={twitterIcon} alt="twitter icon" />
       </div>
-      <div>Contact</div>
-      <div>Terms of use</div>
+      <div className="footer__links">
+        <div className="footer__links-left">
+          <div>Contact</div>
+          <div>Terms of use</div>
+        </div>
+        <div className="footer__links-right">Hackienda Industries</div>
+      </div>
     </footer>
   );
 }

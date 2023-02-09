@@ -32,7 +32,7 @@ function Header() {
 
       <nav className="navbar">
         {/* <div className="navbar__pages pullup"> */}
-        <div class="container lime pullUp">
+        <div className="container lime pullUp">
           <NavLink to="/">
             <h2>HOME</h2>{" "}
           </NavLink>
@@ -40,11 +40,18 @@ function Header() {
             <h2>CREATE CAMPAIGN</h2>
           </NavLink>
           <h2>NEWS</h2>
-          <h2>CAMPAIGNS</h2>
+          <NavLink to="/allcampaigns">
+            <h2>CAMPAIGNS</h2>
+          </NavLink>
         </div>
 
         <div className="container lime pullUp navbar__login">
-          <h2>LOG IN</h2>
+          <NavLink to="/signup">
+            <h2>SIGN UP</h2>
+          </NavLink>
+          <NavLink to="/signin">
+            <h2>SIGN IN</h2>
+          </NavLink>
         </div>
         {/* </div> */}
       </nav>

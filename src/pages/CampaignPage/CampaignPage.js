@@ -7,6 +7,8 @@ import Footer from "../../components/Footer/Footer";
 import beatles from "../../assets/images/284152.jpeg";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Rewards from "../../components/Rewards/Rewards";
+import { ProgressBar, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default CampaignPage;
 
@@ -38,30 +40,46 @@ function CampaignPage() {
   //   navigate(`/${id}/edit`);
   // }
 
+  let totalRaised = (currentArtist.totalRaised / currentArtist.goal) * 100;
+  console.log(totalRaised);
+
   return (
     <>
       <header>
         <Header />
       </header>
-
-      <section className="pageorder">
-        <div className="hero">
-          <img
-            className="hero__image"
-            src={currentArtist.image}
-            alt=" current displayed band, add in as template literal later"
-          />
+      <div className="contentdivider">
+        <section className="pageorder">
+          <div className="hero">
+            <img
+              className="hero__image"
+              src={currentArtist.image}
+              alt=" current displayed band, add in as template literal later"
+            />
+            <div>
+              <h1>
+                {currentArtist.artistname} have so far raised $
+                {currentArtist.totalRaised}
+              </h1>
+              <div className="progressbar">
+                <ProgressBar animated now={50} />
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </section>
+        <div className="sidebarRewards">
+          <article className="sidebar">
+            <div>
+              <img className="profilephoto" src={currentArtist.image} />
+            </div>
+            <Sidebar currentArtist={currentArtist} />
+          </article>
+          <section>
+            <Rewards currentArtist={currentArtist} />
+          </section>
         </div>
-        <div>
-          <h1>{currentArtist.artistname}</h1>
-        </div>
-      </section>
-      <article className="sidebar">
-        <Sidebar currentArtist={currentArtist} />
-      </article>
-      <section>
-        <Rewards currentArtist={currentArtist} />
-      </section>
+      </div>
       <footer>
         <Footer />
       </footer>

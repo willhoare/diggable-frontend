@@ -12,6 +12,13 @@ import HomePage from "./pages/HomePage/HomePage";
 // import SignIn from "./pages/SignIn/SignIn";
 import CampaignPage from "./pages/CampaignPage/CampaignPage";
 import CreateCampaign from "./pages/CreateCampaign/CreateCampaign";
+import AllCampaigns from "./pages/AllCampaigns/AllCampaigns";
+import SignUp from "./pages/SignUp/SignUp";
+import SignIn from "./pages/SignIn/SignIn";
+
+const baseUrl = "http://localhost:8080";
+const signupUrl = `${baseUrl}/signup`;
+const loginUrl = `${baseUrl}/login`;
 
 function App() {
   return (
@@ -22,10 +29,14 @@ function App() {
           <Route path="/artists" element={<HomePage />} />
           <Route path="/artists/:id" element={<CampaignPage />} />
           <Route path="/createcampaign" element={<CreateCampaign />} />
-          {/* <Route path="/campaigns/:id" element={<HomePage />}></Route> */}
-          {/* <Route path="/signin" element={<SignIn />}></Route> */}
+          <Route path="/allcampaigns" element={<AllCampaigns />} />
+          <Route path="/allcampaigns/:id" element={<CreateCampaign />} />
+
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+
           {/* <Route path="/createcampaign" element={<CreateCampaign />}></Route> */}
-          {/* <Route path="/campaigns" element={<CampaignPage />} /> */}
+          <Route path="/campaigns" element={<AllCampaigns />} />
         </Routes>
       </Router>
     </>

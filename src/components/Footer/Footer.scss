@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .footer {
-  background-color: $primary-color-1;
+  background-color: black;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -14,13 +14,25 @@
     flex-direction: row;
     justify-content: start;
     display: flex;
-    background-color: $primary-color-1;
   }
 
   &__textlogo {
-    height: 5rem;
+    height: 15rem;
     flex-direction: row;
     justify-content: center;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__links-left {
+    color: white;
+  }
+
+  &__links-right {
+    color: white;
   }
 }
 

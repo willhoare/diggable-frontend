@@ -1,12 +1,15 @@
 import "./CreateCampaign.scss";
-
+import "../CreateCampaign/bootstrap.min.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
+// trying to add the upload image functionality //
+
 export default function CreateCampaign() {
   const [newCampaign, setNewCampaign] = useState();
+  const [newProfilePhoto, setProfilePhoto] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +22,8 @@ export default function CreateCampaign() {
     const tourdates = submit.tourdates.value;
     const first = submit.first.value;
     const firstvalue = submit.firstvalue.value;
+
+    const profileimage = submit.profileimage.value;
 
     const second = submit.second.value;
     const secondvalue = submit.second.value;
@@ -34,6 +39,22 @@ export default function CreateCampaign() {
 
     const newCampaign = {};
 
+    //image upload code //
+
+    console.log(e.target.profileimage.value);
+
+    const formData = new FormData();
+    formData.append("testimage", profileimage);
+
+    console.log(formData);
+
+    const updateProfilePhoto = async () => {
+      await axios.post(`http://localhost:8080/upload`, formData);
+    };
+    updateProfilePhoto();
+
+    ////////////////////
+
     if (!title || !description) {
       alert("Please fill out all fields.");
       return;
@@ -44,6 +65,7 @@ export default function CreateCampaign() {
           description,
           goal,
           tourdates,
+          profileimage,
           first,
           firstvalue,
           second,
@@ -64,7 +86,14 @@ export default function CreateCampaign() {
   return (
     <>
       <Header />
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        type="file"
+        method="POST"
+        action="http://localhost:8080/upload"
+        encType="multipart/form-data"
+        // onChange={(e) => setProfilePhoto(e.target.files[0])}
+      >
         <div className="form">
           <div className="form__wrap">
             <div>
@@ -117,7 +146,12 @@ export default function CreateCampaign() {
             </div>
 
             <div>
-              <input type="file"></input>
+              <input
+                onChange={(e) => setProfilePhoto(e.target.files[0])}
+                type="file"
+                name="testimage"
+                id="profileimage"
+              ></input>
             </div>
 
             <div>
@@ -188,8 +222,9 @@ export default function CreateCampaign() {
         <form
           type="file"
           method="POST"
-          action="/upload"
+          action="http://localhost:8080/upload"
           encType="multipart/form-data"
+          onChange={(e) => setProfilePhoto(e.target.files[0])}
         >
           <input type="file" name="testimage"></input>
           <input type="submit"></input>

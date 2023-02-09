@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect, startTransition } from "react";
-import "./SignIn.scss";
+import "./SignUp.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Profile from "../Profile/Profile";

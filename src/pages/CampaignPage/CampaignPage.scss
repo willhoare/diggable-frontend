@@ -19,3 +19,21 @@
 .pageorder {
   display: flex;
 }
+
+.sidebarRewards {
+  border: solid red 1px;
+  width: 20%;
+  color: white;
+  background-color: black;
+}
+
+.contentdivider {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profilephoto {
+  border-radius: 50%;
+  border: 2rem solid red;
+  max-width: 100%;
+}

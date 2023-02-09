@@ -1,2 +1,9 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.sidebar__description {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem;
+}
