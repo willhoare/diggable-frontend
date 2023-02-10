@@ -10,9 +10,30 @@ import axios from "axios";
 export default function CreateCampaign() {
   const [newCampaign, setNewCampaign] = useState();
   const [newProfilePhoto, setProfilePhoto] = useState(null);
+  // const [file, setFile] = useState();
+  // const [fileName, setFileName] = useState("");
+
+  // const saveFile = (e) => {
+  //   setFile(e.target.files[0]);
+  //   setFileName(e.target.files[0].name);
+  // };
+
+  // const uploadFile = async (e) => {
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+  //   formData.append("fileName", fileName);
+
+  //   try {
+  //     const res = await axios.post("http://localhost:8080/artists", formData);
+  //     console.log(res);
+  //   } catch (ex) {
+  //     console.log(ex);
+  //   }
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // uploadFile(e);
 
     const submit = e.target;
 
@@ -22,9 +43,9 @@ export default function CreateCampaign() {
     const tourdates = submit.tourdates.value;
     const first = submit.first.value;
     const firstvalue = submit.firstvalue.value;
-
-    const profileimage = submit.profileimage.value;
-
+    // console.log(submit.profileimage);
+    // const profileimage = fileName;
+    // console.log(profileimage);
     const second = submit.second.value;
     const secondvalue = submit.second.value;
 
@@ -41,17 +62,17 @@ export default function CreateCampaign() {
 
     //image upload code //
 
-    console.log(e.target.profileimage.value);
+    // console.log(e.target.profileimage.value);
 
-    const formData = new FormData();
-    formData.append("testimage", profileimage);
+    // const formData = new FormData();
+    // formData.append("testimage", profileimage);
 
-    console.log(formData);
+    // console.log(formData);
 
-    const updateProfilePhoto = async () => {
-      await axios.post(`http://localhost:8080/upload`, formData);
-    };
-    updateProfilePhoto();
+    // const updateProfilePhoto = async () => {
+    //   await axios.post(`http://localhost:8080/artists`, formData);
+    // };
+    // updateProfilePhoto();
 
     ////////////////////
 
@@ -65,7 +86,7 @@ export default function CreateCampaign() {
           description,
           goal,
           tourdates,
-          profileimage,
+          // profileimage,
           first,
           firstvalue,
           second,
@@ -80,7 +101,7 @@ export default function CreateCampaign() {
         .then(setNewCampaign(newCampaign));
     }
     alert("Campaign created successfully!");
-    // window.location = "/";
+    // window.location = "/ampaign";
   };
 
   return (
@@ -90,9 +111,8 @@ export default function CreateCampaign() {
         onSubmit={handleSubmit}
         type="file"
         method="POST"
-        action="http://localhost:8080/upload"
+        action="http://localhost:8080/artists"
         encType="multipart/form-data"
-        // onChange={(e) => setProfilePhoto(e.target.files[0])}
       >
         <div className="form">
           <div className="form__wrap">
@@ -152,6 +172,11 @@ export default function CreateCampaign() {
                 name="testimage"
                 id="profileimage"
               ></input>
+
+              <div className="App">
+                {/* <input type="file" onChange={saveFile} /> */}
+                {/* <button onClick={uploadFile}>Upload</button> */}
+              </div>
             </div>
 
             <div>
@@ -218,7 +243,7 @@ export default function CreateCampaign() {
         </div>
       </form>
 
-      <div>
+      {/* <div>
         <form
           type="file"
           method="POST"
@@ -229,7 +254,7 @@ export default function CreateCampaign() {
           <input type="file" name="testimage"></input>
           <input type="submit"></input>
         </form>
-      </div>
+      </div> */}
 
       <Footer />
     </>

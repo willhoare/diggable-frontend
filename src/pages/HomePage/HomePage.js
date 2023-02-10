@@ -6,6 +6,8 @@ import "./HomePage.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
+import BurgerBar from "../../components/BurgerBar/BurgerBar";
+import Carousel from "../../components/Carousel/Carousel";
 
 export default HomePage;
 
@@ -31,6 +33,8 @@ function HomePage() {
   return (
     <>
       <Header />
+      {/* <BurgerBar /> */}
+      <Carousel />
       <div className="headline">
         <h1>Featured Artists</h1>
       </div>

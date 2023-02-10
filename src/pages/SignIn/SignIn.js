@@ -157,10 +157,10 @@ function SignUp() {
           <Profile />
         </div>
         <div>
-          <googleLogin />
+          <GoogleLogin />
         </div>
         <div>
-          <googleLogout />
+          <GoogleLogout />
         </div>
       </section>
       <div>

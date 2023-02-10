@@ -10,11 +10,13 @@
   }
 
   &__card {
-    border: yellow solid 2px;
-    background-color: white;
-    color: $primary-color-2;
+    border: $primary-color-1 solid 2px;
+    background-color: $primary-color-2;
+    color: white;
+    border-radius: 25%;
     text-align: center;
     display: flex;
     justify-content: space-around;
+    margin: 3rem;
   }
 }

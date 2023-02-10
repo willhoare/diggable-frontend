@@ -15,6 +15,7 @@ import CreateCampaign from "./pages/CreateCampaign/CreateCampaign";
 import AllCampaigns from "./pages/AllCampaigns/AllCampaigns";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
+import CreateCampaignNew from "./pages/CreateCampaignNew/CreateCampaignNew";
 
 const baseUrl = "http://localhost:8080";
 const signupUrl = `${baseUrl}/signup`;
@@ -31,6 +32,7 @@ function App() {
           <Route path="/createcampaign" element={<CreateCampaign />} />
           <Route path="/allcampaigns" element={<AllCampaigns />} />
           <Route path="/allcampaigns/:id" element={<CreateCampaign />} />
+          <Route path="/createcampaignnew" element={<CreateCampaignNew />} />
 
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>

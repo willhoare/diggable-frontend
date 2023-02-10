@@ -3,6 +3,7 @@
 
 .hero {
   margin-left: 5rem;
+  margin: 5rem;
 
   &__image {
     width: 90%;
@@ -21,19 +22,26 @@
 }
 
 .sidebarRewards {
-  border: solid red 1px;
   width: 20%;
   color: white;
-  background-color: black;
+  background-color: $primary-color-2;
+  margin: 5rem;
+  border-radius: 5rem;
+  border-color: $secondary-color-1 2rem solid;
 }
 
 .contentdivider {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .profilephoto {
-  border-radius: 50%;
-  border: 2rem solid red;
+  border-radius: 40%;
+  border: 5px solid $secondary-color-2;
   max-width: 100%;
+}
+
+.goal {
+  margin: 5rem;
+  justify-content: center;
 }

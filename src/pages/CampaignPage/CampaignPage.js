@@ -40,7 +40,12 @@ function CampaignPage() {
   //   navigate(`/${id}/edit`);
   // }
 
-  let totalRaised = (currentArtist.totalRaised / currentArtist.goal) * 100;
+  // let totalRaised =(current)
+  // let totalRaised =
+  //   (currentArtist.campaigns[0].totalRaised / currentArtist.campaigns[0].goal) *
+  //   100;
+  let totalRaised = currentArtist.campaigns[0].totalraised;
+
   console.log(totalRaised);
 
   return (
@@ -56,10 +61,10 @@ function CampaignPage() {
               src={currentArtist.image}
               alt=" current displayed band, add in as template literal later"
             />
-            <div>
+            <div className="goal">
               <h1>
-                {currentArtist.artistname} have so far raised $
-                {currentArtist.totalRaised}
+                {currentArtist.artistname} have so far raised ${totalRaised} of
+                their goal!
               </h1>
               <div className="progressbar">
                 <ProgressBar animated now={50} />

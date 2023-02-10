@@ -2,6 +2,8 @@ import "./Header.scss";
 import textlogo from "../../assets/logos/cropped.png";
 import visuallogo from "../../assets/logos/fac-1.jpg";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import BurgerBar from "../BurgerBar/BurgerBar";
 
 export default Header;
 
@@ -29,7 +31,7 @@ function Header() {
           </NavLink>
         </div>
       </div>
-
+      <BurgerBar />
       <nav className="navbar">
         {/* <div className="navbar__pages pullup"> */}
         <div className="container lime pullUp">
