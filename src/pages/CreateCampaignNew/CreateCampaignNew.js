@@ -8,36 +8,85 @@ import axios from "axios";
 // trying to add the upload image functionality //
 
 export default function CreateCampaignNew() {
-  const [file, setFile] = useState();
-  const [fileName, setFileName] = useState("");
+  const [image, setImage] = useState(null);
+  const [campaignName, setCampaignName] = useState("");
+  const [artistName, setArtistName] = useState("");
+  const [goal, setGoal] = useState("");
+  const [description, setDescription] = useState("");
 
-  const saveFile = (e) => {
-    setFile(e.target.files[0]);
-    setFileName(e.target.files[0].name);
-  };
+  console.log(campaignName);
+  console.log(image);
 
-  const uploadFile = async (e) => {
+  function handleSubmit(e) {
+    e.preventDefault();
+
     const formData = new FormData();
-    formData.append("file", file);
-    formData.append("fileName", fileName);
+    formData.append("image", image);
+    formData.append("campaignName", campaignName);
+    formData.append("artistName", artistName);
+    formData.append("goal", goal);
+    formData.append("description", description);
 
-    try {
-      const res = await axios.post("http://localhost:8080/upload", formData);
-      console.log(res);
-    } catch (ex) {
-      console.log(ex);
-    }
-  };
+    const sendData = async () => {
+      await axios.post("http://localhost:8080/artists", formData);
+    };
+    sendData();
+  }
 
   return (
     <>
       <Header />
       <h2>Campaign upload section</h2>
+      <section className="form">
+        <form className="form__wrap" onSubmit={handleSubmit}>
+          <input
+            name="campaignName"
+            placeholder="Campaign Name"
+            type="text"
+            onChange={(e) => {
+              setCampaignName(e.target.value);
+            }}
+          ></input>
 
-      <div className="App">
-        <input type="file" onChange={saveFile} />
-        <button onClick={uploadFile}>Upload</button>
-      </div>
+          <input
+            name="artistName"
+            placeholder="Artist Name"
+            type="text"
+            onChange={(e) => {
+              setArtistName(e.target.value);
+            }}
+          ></input>
+
+          <input
+            name="goal"
+            placeholder="Financial goal for your campaign "
+            type="text"
+            onChange={(e) => {
+              setGoal(e.target.value);
+            }}
+          ></input>
+
+          <input
+            name="description"
+            placeholder="Give a short description of your campaign"
+            type="text"
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+          ></input>
+
+          <input
+            type="file"
+            name="campaignName"
+            onChange={(e) => {
+              setImage(e.target.files[0]);
+            }}
+            accepts="image/png, image/gif, image/jpeg"
+          ></input>
+
+          <button>Submit</button>
+        </form>
+      </section>
       <Footer />
     </>
   );
