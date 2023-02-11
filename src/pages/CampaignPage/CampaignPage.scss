@@ -2,8 +2,13 @@
 @use "../../styles/partials/mixins" as *;
 
 .hero {
-  margin-left: 5rem;
-  margin: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @include tablet {
+    margin-left: 5rem;
+    justify-content: flex-start;
+  }
 
   &__image {
     width: 90%;
@@ -11,32 +16,50 @@
     box-shadow: 5px 5px;
     aspect-ratio: 14/9;
   }
+
+  &__imagewrap {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .sidebar {
   flex-direction: row;
+  margin: 10%;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    max-height: 100%;
+  }
 }
 
 .pageorder {
   display: flex;
+  margin: 5%;
 }
 
 .sidebarRewards {
-  width: 20%;
+  width: 100%;
   color: white;
   background-color: $primary-color-2;
-  margin: 5rem;
-  border-radius: 5rem;
+  border-radius: 1%;
   border-color: $secondary-color-1 2rem solid;
+  flex-direction: column;
 }
 
 .contentdivider {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
 }
 
 .profilephoto {
-  border-radius: 40%;
+  border-radius: 5%;
   border: 5px solid $secondary-color-2;
   max-width: 100%;
 }

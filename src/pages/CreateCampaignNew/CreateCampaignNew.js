@@ -10,9 +10,20 @@ import axios from "axios";
 export default function CreateCampaignNew() {
   const [image, setImage] = useState(null);
   const [campaignName, setCampaignName] = useState("");
-  const [artistName, setArtistName] = useState("");
+  const [artistname, setArtistName] = useState("");
   const [goal, setGoal] = useState("");
   const [description, setDescription] = useState("");
+  const [tourdates, setTourdates] = useState("");
+  const [firstReward, setFirstReward] = useState("");
+  const [firstRewardValue, setFirstRewardValue] = useState("");
+  const [secondReward, setSecondReward] = useState("");
+  const [secondRewardValue, setSecondRewardValue] = useState("");
+  const [thirdReward, setThirdReward] = useState("");
+  const [thirdRewardValue, setThirdRewardValue] = useState("");
+  const [fourthReward, setFourthReward] = useState("");
+  const [fourthRewardValue, setFourthRewardValue] = useState("");
+  const [fifthReward, setFifthReward] = useState("");
+  const [fifthRewardValue, setFifthRewardValue] = useState("");
 
   console.log(campaignName);
   console.log(image);
@@ -23,9 +34,20 @@ export default function CreateCampaignNew() {
     const formData = new FormData();
     formData.append("image", image);
     formData.append("campaignName", campaignName);
-    formData.append("artistName", artistName);
+    formData.append("artistname", artistname);
     formData.append("goal", goal);
     formData.append("description", description);
+    formData.append("tourdates", tourdates);
+    formData.append("firstReward", firstReward);
+    formData.append("firstRewardValue", firstRewardValue);
+    formData.append("secondReward", secondReward);
+    formData.append("secondRewardValue", secondRewardValue);
+    formData.append("thirdReward", thirdReward);
+    formData.append("thirdRewardValue", thirdRewardValue);
+    formData.append("fourthReward", fourthReward);
+    formData.append("fourthRewardValue", fourthRewardValue);
+    formData.append("fifthReward", fifthReward);
+    formData.append("fifthRewardValue", fifthRewardValue);
 
     const sendData = async () => {
       await axios.post("http://localhost:8080/artists", formData);
@@ -49,7 +71,7 @@ export default function CreateCampaignNew() {
           ></input>
 
           <input
-            name="artistName"
+            name="artistname"
             placeholder="Artist Name"
             type="text"
             onChange={(e) => {
@@ -76,12 +98,106 @@ export default function CreateCampaignNew() {
           ></input>
 
           <input
+            name="tourdates"
+            placeholder="List and estimate dates that you will be touring"
+            type="text"
+            onChange={(e) => {
+              setTourdates(e.target.value);
+            }}
+          ></input>
+
+          <input
             type="file"
             name="campaignName"
             onChange={(e) => {
               setImage(e.target.files[0]);
             }}
             accepts="image/png, image/gif, image/jpeg"
+          ></input>
+
+          <input
+            name="firstReward"
+            placeholder="List the first lowest value reward you will be offering to fans"
+            type="text"
+            onChange={(e) => {
+              setFirstReward(e.target.value);
+            }}
+          ></input>
+          <input
+            name="firstRewardValue"
+            placeholder="List the price and cost of the first reward avilable to fans"
+            type="text"
+            onChange={(e) => {
+              setFirstRewardValue(e.target.value);
+            }}
+          ></input>
+
+          <input
+            name="secondReward"
+            placeholder="List the second lowest value reward you will be offering to fans"
+            type="text"
+            onChange={(e) => {
+              setSecondReward(e.target.value);
+            }}
+          ></input>
+          <input
+            name="secondRewardValue"
+            placeholder="List the price and cost of the second reward avilable to fans"
+            type="text"
+            onChange={(e) => {
+              setSecondRewardValue(e.target.value);
+            }}
+          ></input>
+
+          <input
+            name="thirdReward"
+            placeholder="List the third lowest value reward you will be offering to fans"
+            type="text"
+            onChange={(e) => {
+              setThirdReward(e.target.value);
+            }}
+          ></input>
+          <input
+            name="thirdRewardValue"
+            placeholder="List the price and cost of the third reward avilable to fans"
+            type="text"
+            onChange={(e) => {
+              setThirdRewardValue(e.target.value);
+            }}
+          ></input>
+
+          <input
+            name="fourthReward"
+            placeholder="List the fourth lowest value reward you will be offering to fans"
+            type="text"
+            onChange={(e) => {
+              setFourthReward(e.target.value);
+            }}
+          ></input>
+          <input
+            name="fourthRewardValue"
+            placeholder="List the price and cost of the fourth reward avilable to fans"
+            type="text"
+            onChange={(e) => {
+              setFourthRewardValue(e.target.value);
+            }}
+          ></input>
+
+          <input
+            name="fifthReward"
+            placeholder="List the fifth lowest value reward you will be offering to fans"
+            type="text"
+            onChange={(e) => {
+              setFifthReward(e.target.value);
+            }}
+          ></input>
+          <input
+            name="fifthRewardValue"
+            placeholder="List the price and cost of the fifth reward avilable to fans"
+            type="text"
+            onChange={(e) => {
+              setFifthRewardValue(e.target.value);
+            }}
           ></input>
 
           <button>Submit</button>

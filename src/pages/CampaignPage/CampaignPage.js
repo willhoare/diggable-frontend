@@ -46,7 +46,7 @@ function CampaignPage() {
   //   100;
   let totalRaised = currentArtist.campaigns[0].totalraised;
 
-  console.log(totalRaised);
+  console.log(toString(totalRaised));
 
   return (
     <>
@@ -56,15 +56,17 @@ function CampaignPage() {
       <div className="contentdivider">
         <section className="pageorder">
           <div className="hero">
-            <img
-              className="hero__image"
-              src={currentArtist.image}
-              alt=" current displayed band, add in as template literal later"
-            />
+            <div className="hero__imagewrap">
+              <img
+                className="hero__image"
+                src={currentArtist.image}
+                alt=" current displayed band, add in as template literal later"
+              />
+            </div>
             <div className="goal">
               <h1>
-                {currentArtist.artistname} have so far raised ${totalRaised} of
-                their goal!
+                {currentArtist.artistname} have so far raised $
+                {toString(totalRaised)} of their goal!
               </h1>
               <div className="progressbar">
                 <ProgressBar animated now={50} />
@@ -75,7 +77,7 @@ function CampaignPage() {
         </section>
         <div className="sidebarRewards">
           <article className="sidebar">
-            <div>
+            <div className="sidebar__image">
               <img className="profilephoto" src={currentArtist.image} />
             </div>
             <Sidebar currentArtist={currentArtist} />

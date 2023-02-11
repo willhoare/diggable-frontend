@@ -3,7 +3,6 @@
 
 .rewards {
   &__container {
-    border: solid green 20px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -11,12 +10,50 @@
 
   &__card {
     border: $primary-color-1 solid 2px;
-    background-color: $primary-color-2;
-    color: white;
-    border-radius: 25%;
+    background-color: $secondary-color-1;
+    color: $primary-color-2;
     text-align: center;
     display: flex;
-    justify-content: space-around;
-    margin: 3rem;
+    flex-direction: column;
+    text-transform: uppercase;
+    justify-content: center;
+    margin: 5%;
+    height: 100%;
+    padding: 5%;
+    border-radius: 2rem;
+    transition: all 0.5s ease-in-out;
   }
+
+  &__value {
+    font-weight: bold;
+    font-size: 200%;
+  }
+}
+
+.diggButton {
+  max-width: 100%;
+  border-radius: 10%;
+  background-color: black;
+  width: 40%;
+  height: 2em;
+  font-size: 150%;
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+  display: flex;
+  text-transform: uppercase;
+  &__wrap {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.diggButton:hover {
+  background-color: grey;
+}
+.rewards__card:hover {
+  background-color: $primary-color-1;
+  border-color: $secondary-color-1;
+  transform: scale(1.1);
 }

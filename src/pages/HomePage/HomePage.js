@@ -19,7 +19,6 @@ function HomePage() {
     const getArtists = async () => {
       const { data } = await axios.get(artistUrl);
       setArtistList(data);
-      console.log(data);
     };
     getArtists();
   }, []);
@@ -29,6 +28,9 @@ function HomePage() {
   }
   // return artistList.map((artist) => {
   //   let id = artist.id;
+
+  // let description = artistList[0].campaigns[0].description;
+  // console.log(description);
 
   return (
     <>

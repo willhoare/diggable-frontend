@@ -7,45 +7,39 @@ function Rewards({ currentArtist }) {
     return (
       <section className="rewards__container">
         <div className="rewards__card">
-          <h1>{rewards.first}</h1>
-          <p className="rewards__value">{rewards.firstvalue}</p>
-          <button>Digg it</button>
+          <h1>{rewards.firstReward}</h1>
+          <p className="rewards__value">{rewards.firstRewardValue}</p>
+          <div className="diggButton__wrap">
+            <button className="diggButton">Digg it</button>
+          </div>
         </div>
         <div className="rewards__card">
-          <h1>{rewards.second}</h1>
-          <p className="rewards__value">{rewards.secondvalue}</p>
+          <h1>{rewards.secondReward}</h1>
+          <p className="rewards__value">{rewards.secondRewardValue}</p>
+          <div className="diggButton__wrap">
+            <button className="diggButton">Digg it</button>
+          </div>
         </div>
         <div className="rewards__card">
-          <h1>{rewards.third}</h1>
-          <p className="rewards__value">{rewards.thirdvalue}</p>
+          <h1>{rewards.thirdReward}</h1>
+          <p className="rewards__value">{rewards.thirdRewardValue}</p>
+          <div className="diggButton__wrap">
+            <button className="diggButton">Digg it</button>
+          </div>
         </div>
         <div className="rewards__card">
-          <h1>{rewards.fourth}</h1>
-          <p className="rewards__value">{rewards.fourthvalue}</p>
+          <h1>{rewards.fourthReward}</h1>
+          <p className="rewards__value">{rewards.fourthRewardValue}</p>
+          <div className="diggButton__wrap">
+            <button className="diggButton">Digg it</button>
+          </div>
         </div>
         <div className="rewards__card">
-          <h1>{rewards.fifth}</h1>
-          <p className="rewards__value">{rewards.fifthvalue}</p>
-        </div>
-        <div className="rewards__card">
-          <h1>{rewards.sixth}</h1>
-          <p className="rewards__value">{rewards.sixthvalue}</p>
-        </div>
-        <div className="rewards__card">
-          <h1>{rewards.seventh}</h1>
-          <p className="rewards__value">{rewards.seventhvalue}</p>
-        </div>
-        <div className="rewards__card">
-          <h1>{rewards.eighth}</h1>
-          <p className="rewards__value">{rewards.eighthvalue}</p>
-        </div>
-        <div className="rewards__card">
-          <h1>{rewards.ninth}</h1>
-          <p className="rewards__value">{rewards.ninthvalue}</p>
-        </div>
-        <div className="rewards__card">
-          <h1>{rewards.tenth}</h1>
-          <p className="rewards__value">{rewards.tenthvalue}</p>
+          <h1>{rewards.fifthReward}</h1>
+          <p className="rewards__value">{rewards.fifthRewardValue}</p>
+          <div className="diggButton__wrap">
+            <button className="diggButton">Digg it</button>
+          </div>
         </div>
       </section>
     );

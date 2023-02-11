@@ -13,6 +13,7 @@ const ArtistCard = ({ artistList, setArtistList }) => {
               alt="image of featured band"
             />
             <h2>{artist.artistname}</h2>
+            <p></p>
           </div>
         </Link>
       </section>

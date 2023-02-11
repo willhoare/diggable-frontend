@@ -94,3 +94,12 @@
   transform: rotate(0) translate(0);
   transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
 }
+
+.burgerNavlinks {
+  color: white !important;
+  background-color: red;
+  margin-inline: 19%;
+  display: flex;
+  justify-content: end;
+  margin-top: 9rem;
+}

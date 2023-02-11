@@ -33,7 +33,33 @@ function BurgerBar() {
             <div className={burger_class}></div>
           </div>
         </nav>
-        <div className={menu_class}></div>
+        <div className={menu_class}>
+          <h1 className="burgerNavlinks">
+            <NavLink to="/">
+              <h2>HOME</h2>
+            </NavLink>
+          </h1>
+          <h1 className="burgerNavlinks">
+            <NavLink to="/createcampaign">
+              <h2>CREATE CAMPAIGN</h2>
+            </NavLink>
+          </h1>
+          <h1 className="burgerNavlinks">
+            <NavLink to="/allcampaigns">
+              <h2>CAMPAIGNS</h2>
+            </NavLink>
+          </h1>
+          <h1 className="burgerNavlinks">
+            <NavLink to="/signup">
+              <h2>SIGN UP</h2>
+            </NavLink>
+          </h1>
+          <h1 className="burgerNavlinks">
+            <NavLink to="/signin">
+              <h2>SIGN IN</h2>
+            </NavLink>
+          </h1>
+        </div>
       </div>
     </div>
   );

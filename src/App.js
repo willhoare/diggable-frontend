@@ -29,10 +29,9 @@ function App() {
           <Route path="/" element={<Navigate to="/artists" />} />
           <Route path="/artists" element={<HomePage />} />
           <Route path="/artists/:id" element={<CampaignPage />} />
-          <Route path="/createcampaign" element={<CreateCampaign />} />
           <Route path="/allcampaigns" element={<AllCampaigns />} />
           <Route path="/allcampaigns/:id" element={<CreateCampaign />} />
-          <Route path="/createcampaignnew" element={<CreateCampaignNew />} />
+          <Route path="/createcampaign" element={<CreateCampaignNew />} />
 
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
