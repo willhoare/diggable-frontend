@@ -76,7 +76,9 @@ function CampaignPage() {
                 <ProgressBar animated now={currentArtist.totalRaised} />
               </div>
             </div>
-            <div></div>
+            <div className="campaignOverview">
+              <p></p>
+            </div>
           </div>
         </section>
         <div className="sidebarRewards">
