@@ -45,9 +45,10 @@ function CampaignPage() {
   // let totalRaised =
   //   (currentArtist.campaigns[0].totalRaised / currentArtist.campaigns[0].goal) *
   //   100;
-  let totalRaised = currentArtist.campaigns[0].totalraised;
+  let totalRaised = currentArtist.campaigns[0].totalRaised;
+  console.log(currentArtist.image);
 
-  console.log(toString(totalRaised));
+  console.log(`CHARLOTTE`, totalRaised);
 
   return (
     <>
@@ -63,17 +64,17 @@ function CampaignPage() {
             <div className="hero__imagewrap">
               <img
                 className="hero__image"
-                src={currentArtist.heroImage}
+                src={currentArtist.image}
                 alt=" current displayed band, add in as template literal later"
               />
             </div>
             <div className="goal">
               <h1>
-                {currentArtist.artistname} have so far raised $
-                {currentArtist.totalRaised} of their goal!
+                {currentArtist.artistname} have so far raised ${totalRaised} of
+                their goal!
               </h1>
               <div className="progressbar">
-                <ProgressBar animated now={currentArtist.totalRaised} />
+                <ProgressBar animated now={totalRaised} />
               </div>
             </div>
             <div className="campaignOverview">
@@ -84,7 +85,7 @@ function CampaignPage() {
         <div className="sidebarRewards">
           <article className="sidebar">
             <div className="sidebar__image">
-              <img className="profilephoto" src={currentArtist.heroImage} />
+              <img className="profilephoto" src={currentArtist.image} />
             </div>
             <Sidebar currentArtist={currentArtist} />
           </article>

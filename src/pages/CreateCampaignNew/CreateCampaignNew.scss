@@ -7,38 +7,9 @@
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
-  flex-direction: column;
 
   &__wrap {
-    flex-direction: row;
+    flex-direction: column;
     display: flex;
   }
-
-  &__element {
-    display: flex;
-    border: red solid 1px;
-    justify-content: end;
-  }
-
-  &__identifiers {
-    display: flex;
-    margin: 1rem;
-    border: red 10px;
-  }
-
-  &__inputs {
-    border: red 10px;
-  }
-}
-
-.leftHalf {
-  border: 1px solid green;
-}
-
-.rightHalf {
-  border: 1px solid green;
-}
-
-.value {
-  width: 1rem;
 }
