@@ -9,7 +9,7 @@ const ArtistCard = ({ artistList, setArtistList }) => {
           <div className="cardContainer">
             <img
               className="cardContainer__image"
-              src={artist.image}
+              src={artist.heroImage}
               alt="image of featured band"
             />
             <h2>{artist.artistname}</h2>

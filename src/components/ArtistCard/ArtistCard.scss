@@ -2,14 +2,22 @@
 @use "../../styles/partials/mixins" as *;
 
 .cardContainer {
-  height: 10rem;
-  width: 30rem;
-  background-color: $primary-color-1;
-  border: solid $secondary-color-1 4px;
+  max-height: 100%;
+  max-width: 19rem;
+  background-color: white;
+  border: $secondary-color-2 SOLID 1px;
   display: flex;
+  padding: 5%;
+  flex-direction: column;
+  margin: 6px;
+  justify-content: flex-end;
+  font-family: exposition;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
 
   &__image {
     object-fit: cover;
+    height: 100%;
   }
 }
 
@@ -17,4 +25,27 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.imagewrap image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardContainer:hover {
+  box-shadow: 10px 5px 5px $secondary-color-2;
+  border-color: grey;
+  transform: scale(1.1);
+}
+
+.pinwrap {
+  display: flex;
+  justify-content: center;
+}
+
+.pin {
+  max-height: 10px;
+  max-width: 10px;
+  margin-bottom: 2rem;
 }

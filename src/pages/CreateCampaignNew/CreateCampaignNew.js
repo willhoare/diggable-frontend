@@ -8,11 +8,13 @@ import axios from "axios";
 // trying to add the upload image functionality //
 
 export default function CreateCampaignNew() {
-  const [image, setImage] = useState(null);
+  const [heroImage, setHeroImage] = useState(null);
   const [campaignName, setCampaignName] = useState("");
   const [artistname, setArtistName] = useState("");
   const [goal, setGoal] = useState("");
   const [description, setDescription] = useState("");
+  const [story, setStory] = useState("");
+
   const [tourdates, setTourdates] = useState("");
   const [firstReward, setFirstReward] = useState("");
   const [firstRewardValue, setFirstRewardValue] = useState("");
@@ -26,17 +28,19 @@ export default function CreateCampaignNew() {
   const [fifthRewardValue, setFifthRewardValue] = useState("");
 
   console.log(campaignName);
-  console.log(image);
+  console.log(heroImage);
 
   function handleSubmit(e) {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("image", image);
+    formData.append("heroImage", heroImage);
     formData.append("campaignName", campaignName);
     formData.append("artistname", artistname);
     formData.append("goal", goal);
     formData.append("description", description);
+    formData.append("story", story);
+
     formData.append("tourdates", tourdates);
     formData.append("firstReward", firstReward);
     formData.append("firstRewardValue", firstRewardValue);
@@ -98,6 +102,15 @@ export default function CreateCampaignNew() {
           ></input>
 
           <input
+            name="story"
+            placeholder="Please give a bit more detailed background on your music and your act as well as why you are looking to tour and more details on when. This is your chance to let the public know if your own words why they should support your upcoming tour, a great chance to mention upcoming albums and singles and available merchandise."
+            type="text"
+            onChange={(e) => {
+              setStory(e.target.value);
+            }}
+          ></input>
+
+          <input
             name="tourdates"
             placeholder="List and estimate dates that you will be touring"
             type="text"
@@ -110,7 +123,7 @@ export default function CreateCampaignNew() {
             type="file"
             name="campaignName"
             onChange={(e) => {
-              setImage(e.target.files[0]);
+              setHeroImage(e.target.files[0]);
             }}
             accepts="image/png, image/gif, image/jpeg"
           ></input>

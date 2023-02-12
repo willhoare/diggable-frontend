@@ -9,6 +9,7 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Rewards from "../../components/Rewards/Rewards";
 import { ProgressBar, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Modal from "../../components/Modal/Modal";
 
 export default CampaignPage;
 
@@ -50,26 +51,29 @@ function CampaignPage() {
 
   return (
     <>
+      {/* <Modal /> */}
+
       <header>
         <Header />
       </header>
+
       <div className="contentdivider">
         <section className="pageorder">
           <div className="hero">
             <div className="hero__imagewrap">
               <img
                 className="hero__image"
-                src={currentArtist.image}
+                src={currentArtist.heroImage}
                 alt=" current displayed band, add in as template literal later"
               />
             </div>
             <div className="goal">
               <h1>
                 {currentArtist.artistname} have so far raised $
-                {toString(totalRaised)} of their goal!
+                {currentArtist.totalRaised} of their goal!
               </h1>
               <div className="progressbar">
-                <ProgressBar animated now={50} />
+                <ProgressBar animated now={currentArtist.totalRaised} />
               </div>
             </div>
             <div></div>
@@ -78,7 +82,7 @@ function CampaignPage() {
         <div className="sidebarRewards">
           <article className="sidebar">
             <div className="sidebar__image">
-              <img className="profilephoto" src={currentArtist.image} />
+              <img className="profilephoto" src={currentArtist.heroImage} />
             </div>
             <Sidebar currentArtist={currentArtist} />
           </article>

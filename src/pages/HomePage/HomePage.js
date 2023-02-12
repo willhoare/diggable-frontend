@@ -7,7 +7,8 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import BurgerBar from "../../components/BurgerBar/BurgerBar";
-import Carousel from "../../components/Carousel/Carousel";
+import CarouselComponent from "../../components/Carousel/CarouselComponent";
+import Introduction from "../../components/Introduction/Introduction";
 
 export default HomePage;
 
@@ -36,15 +37,16 @@ function HomePage() {
     <>
       <Header />
       {/* <BurgerBar /> */}
-      <Carousel />
-      <div className="headline">
+      <Introduction />
+      <CarouselComponent artistList={artistList} />
+      {/* <div className="headline">
         <h1>Featured Artists</h1>
       </div>
       <div className="allArtists__wrap">
         <div className="allArtists">
           <ArtistCard artistList={artistList} />
         </div>
-      </div>
+      </div> */}
 
       <div>
         <Footer />
