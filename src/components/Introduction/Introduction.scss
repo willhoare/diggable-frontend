@@ -11,6 +11,19 @@
     align-items: center;
     background-color: #f5f5f5;
     padding: 10%;
+    background-image: url();
+
+    background: linear-gradient(
+        0deg,
+        rgba(142, 116, 131, 0.3),
+        rgba(78, 73, 21, 0.3)
+      ),
+      url("../../assets/images/the-keening-voice-of-joni-mitchell-draws-listeners-from-news-photo-1579467255.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+    color: #f5f5f5;
   }
 
   &__firstwrap {
@@ -36,6 +49,7 @@
     text-align: center;
     margin: 3rem;
     font-weight: lighter;
+    background-color: rgba(142, 116, 131, 0.3), rgba(142, 116, 131, 0.3);
   }
 
   &__buttons {

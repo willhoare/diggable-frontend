@@ -15,7 +15,15 @@ function Sidebar({ currentArtist }) {
       <section>
         <h1></h1>
         <div className="sidebar__description">
-          <h2>{description}</h2>
+          <h2>
+            See below for some of the great rewards that{" "}
+            {currentArtist.artistname} has to offer. All items sold will go
+            straight towards funding their next big live tour, and you can help
+            them reach that goal.
+          </h2>
+        </div>
+        <div>
+          <Rewards currentArtist={currentArtist} />
         </div>
       </section>
     );

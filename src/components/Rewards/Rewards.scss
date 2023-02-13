@@ -9,8 +9,8 @@
   }
 
   &__card {
-    border: $primary-color-1 solid 2px;
-    background-color: $secondary-color-1;
+    // border: $primary-color-1 solid 2px;
+    // background-color: $secondary-color-1;
     color: $primary-color-2;
     text-align: center;
     display: flex;
@@ -20,7 +20,7 @@
     margin: 5%;
     height: 100%;
     padding: 5%;
-    border-bottom-right-radius: 8rem;
+    border-top-right-radius: 8rem;
     transition: all 0.1s ease-in-out;
     box-shadow: 10px 5px 5px $secondary-color-2;
   }
@@ -32,17 +32,18 @@
 }
 
 .diggButton {
-  max-width: 100%;
-  border-radius: 10%;
+  border-radius: 2em;
   background-color: black;
-  width: 40%;
+  width: 85%;
   height: 2em;
-  font-size: 150%;
+  font-size: 100%;
   font-weight: bold;
   color: white;
   justify-content: center;
   display: flex;
   text-transform: uppercase;
+  transition: all 0.1s ease-in-out;
+
   &__wrap {
     max-width: 100%;
     display: flex;
@@ -52,6 +53,7 @@
 
 .diggButton:hover {
   background-color: grey;
+  transform: scale(1.1);
 }
 .rewards__card:hover {
   background-color: $primary-color-1;

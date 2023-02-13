@@ -232,18 +232,18 @@ h4 {
 }
 
 a:link {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a:visited {
-  text-decoration: none;
+  text-decoration: none !important;
   color: $primary-color-2;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:active {
-  text-decoration: none;
+  text-decoration: none !important;
 }

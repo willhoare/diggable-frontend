@@ -4,10 +4,13 @@
 .allArtists {
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   @include tablet {
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
   }
 
   &__wrap {

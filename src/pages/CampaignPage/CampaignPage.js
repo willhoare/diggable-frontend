@@ -48,7 +48,16 @@ function CampaignPage() {
   let totalRaised = currentArtist.campaigns[0].totalRaised;
   console.log(currentArtist.image);
 
-  console.log(`CHARLOTTE`, totalRaised);
+  // function progress(num, per) {
+  //   return (num / 100) * per;
+  // }
+
+  // console.log(progress(totalRaised, currentArtist.goal));
+
+  let progress = (100 / currentArtist.campaigns[0].goal) * totalRaised;
+
+  console.log(currentArtist.campaigns[0].goal);
+  console.log(progress);
 
   return (
     <>
@@ -70,15 +79,15 @@ function CampaignPage() {
             </div>
             <div className="goal">
               <h1>
-                {currentArtist.artistname} have so far raised ${totalRaised} of
-                their goal!
+                {currentArtist.artistname} have so far raised ${totalRaised} &
+                {progress}% of their goal!
               </h1>
               <div className="progressbar">
-                <ProgressBar animated now={totalRaised} />
+                <ProgressBar animated now={progress} />
               </div>
             </div>
             <div className="campaignOverview">
-              <p></p>
+              <h2>{currentArtist.campaigns[0].description}</h2>
             </div>
           </div>
         </section>
@@ -89,9 +98,6 @@ function CampaignPage() {
             </div>
             <Sidebar currentArtist={currentArtist} />
           </article>
-          <section>
-            <Rewards currentArtist={currentArtist} />
-          </section>
         </div>
       </div>
       <footer>

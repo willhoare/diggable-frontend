@@ -1,4 +1,5 @@
 import "./Introduction.scss";
+import background from "../../assets/images/package.jpeg";
 
 function Introduction() {
   return (
