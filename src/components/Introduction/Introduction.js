@@ -1,5 +1,6 @@
 import "./Introduction.scss";
 import background from "../../assets/images/package.jpeg";
+import { Link } from "react-router-dom";
 
 function Introduction() {
   return (
@@ -13,7 +14,9 @@ function Introduction() {
               and find lively, exciting music artists before they hit the
               mainstream and help support them along the way.
             </h2>
-            <button className="introduction__buttons">Learn More</button>
+            <Link to={`/allcampaigns/`}>
+              <button className="introduction__buttons">Learn More</button>
+            </Link>
           </div>
         </div>
         <div className="introduction__second">
@@ -30,7 +33,12 @@ function Introduction() {
             potential risks — and then fund the campaigns that you want to help
             succeed.
           </h2>
-          <button className="introduction__buttons">Discover Campaigns</button>
+          <Link to={`/allcampaigns/`}>
+            {" "}
+            <button className="introduction__buttons">
+              Discover Campaigns
+            </button>
+          </Link>
         </div>
       </section>
     </>

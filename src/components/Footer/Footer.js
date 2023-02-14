@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import instaIcon from "../../assets/icons/Icon-instagram.svg";
 import facebookIcon from "../../assets/icons/Icon-facebook.svg";
 import twitterIcon from "../../assets/icons/Icon-twitter.svg";
-import footerLogo from "../../assets/logos/png/logo-white.png";
+import footerLogo from "../../assets/logos/png/cropped.png";
 
 export default Header;
 
@@ -27,10 +27,16 @@ function Header() {
       </div>
       <div className="footer__links">
         <div className="footer__links-left">
-          <div>Contact</div>
-          <div>Terms of use</div>
+          <div>
+            <h2>Contact</h2>
+          </div>
+          <div>
+            <h2>Terms of use</h2>
+          </div>
         </div>
-        <div className="footer__links-right">Hackienda Industries</div>
+        <div className="footer__links-right">
+          <h2>Hackienda Industries</h2>
+        </div>
       </div>
     </footer>
   );

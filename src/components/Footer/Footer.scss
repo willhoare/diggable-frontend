@@ -10,16 +10,17 @@
   padding-left: 5rem;
 
   &__textlogowrap {
-    height: 100%;
     flex-direction: row;
     justify-content: start;
     display: flex;
   }
 
   &__textlogo {
-    height: 15rem;
     flex-direction: row;
     justify-content: center;
+    height: 14rem;
+    padding-top: 4em;
+    padding-bottom: 2em;
   }
 
   &__links {
@@ -29,10 +30,15 @@
 
   &__links-left {
     color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 9em;
   }
 
   &__links-right {
     color: white;
+    margin-inline: 5%;
   }
 }
 
@@ -41,8 +47,10 @@
 }
 
 .socialIcon {
-  margin-inline: 2rem;
+  margin-right: 4em;
   display: flex;
   justify-content: space-between;
   width: 3rem;
+  margin-bottom: 3em;
+  max-height: 2em;
 }
