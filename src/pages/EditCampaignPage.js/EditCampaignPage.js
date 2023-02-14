@@ -1,77 +1,87 @@
-import "./CreateCampaignNew.scss";
-import "../CreateCampaign/bootstrap.min.css";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import React, { useState, useEffect, useRef } from "react";
+import "./EditCampaignPage.scss";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+const BASE_API_URL = "http://localhost:8080/artists";
 
-// trying to add the upload image functionality //
+export default function EditCampaignPage() {
+  document.title = "Edit Campaign - Diggable";
+  const [artistName, setArtistName] = useState("");
+  const [artistInfo, setArtistInfo] = useState({});
+  const navigate = useNavigate();
+  let { id } = useParams();
 
-export default function CreateCampaignNew() {
-  const [image, setImage] = useState(null);
-  const [campaignName, setCampaignName] = useState("");
-  const [artistname, setArtistName] = useState("");
-  const [goal, setGoal] = useState("");
-  const [description, setDescription] = useState("");
-  const [tourdates, setTourdates] = useState("");
-  const [firstReward, setFirstReward] = useState("");
-  const [firstRewardValue, setFirstRewardValue] = useState("");
-  const [secondReward, setSecondReward] = useState("");
-  const [secondRewardValue, setSecondRewardValue] = useState("");
-  const [thirdReward, setThirdReward] = useState("");
-  const [thirdRewardValue, setThirdRewardValue] = useState("");
-  const [fourthReward, setFourthReward] = useState("");
-  const [fourthRewardValue, setFourthRewardValue] = useState("");
-  const [fifthReward, setFifthReward] = useState("");
-  const [fifthRewardValue, setFifthRewardValue] = useState("");
+  const goBack = () => {
+    navigate(-1);
+  };
 
-  console.log(campaignName);
-  console.log(image);
+  useEffect(() => {
+    try {
+      async function getArtistName() {
+        const { data } = await axios.get(`${BASE_API_URL}/warehouses/${id}`);
+        setArtistName(data.artistname);
+        console.log(artistname);
+      }
+      getArtistName();
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id]);
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  const handleChange = (event) => {
+    setArtistInfo({
+      ...artistInfo,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("campaignName", campaignName);
-    formData.append("artistname", artistname);
-    formData.append("goal", goal);
-    formData.append("description", description);
-    formData.append("tourdates", tourdates);
-    formData.append("firstReward", firstReward);
-    formData.append("firstRewardValue", firstRewardValue);
-    formData.append("secondReward", secondReward);
-    formData.append("secondRewardValue", secondRewardValue);
-    formData.append("thirdReward", thirdReward);
-    formData.append("thirdRewardValue", thirdRewardValue);
-    formData.append("fourthReward", fourthReward);
-    formData.append("fourthRewardValue", fourthRewardValue);
-    formData.append("fifthReward", fifthReward);
-    formData.append("fifthRewardValue", fifthRewardValue);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const {
+      //   city,
+      //   country,
+      //   artistname,
+    } = artistInfo;
 
-    const sendData = async () => {
-      await axios.post("http://localhost:8080/artists", formData);
-    };
-    sendData();
-  }
+    if (
+      //   !city ||,
+      //   !country ||
+      !artistname ||
+      !campaignName
+    ) {
+      alert("All fields are required");
+    } else {
+      updatedWarehouse();
+      navigate(`/warehouses`);
+    }
+  };
+
+  const updatedArtist = async () => {
+    try {
+      const snakedWarehouseInfo = Object.keys(warehouseInfo).reduce(
+        (snaked, key) => {
+          snaked[snakeCase(key)] = warehouseInfo[key];
+          return snaked;
+        }
+      );
+
+      const request = await axios.put(
+        `${BASE_API_URL}/warehouses/${id}`,
+        snakedWarehouseInfo
+      );
+      console.log(request.data);
+    } catch (error) {
+      console.error("Error: ", error);
+    }
+  };
+
+  const handleCancel = () => {
+    navigate("/artists");
+  };
 
   return (
     <>
       <Header />
-      <article className="intro">
-        <div className="intro__content">
-          <h2 className="intro__header">Bring your campaign to life.</h2>
-          <p className="intro__paragraph">
-            Launch you new live-music campaign today by filling out all the
-            details below. This is your chance to give your fans and supporters
-            as much information as possible on the upcoming potential tour.
-            Where you will be looking to visit and when, and what specific
-            rewards you are putting up to tender in return for their support to
-            help raise funds for your total financial goal.
-            <br /> Digg deep!
-          </p>
-        </div>
-      </article>
       <section className="form">
         <form onSubmit={handleSubmit}>
           <section className="form__wrap">

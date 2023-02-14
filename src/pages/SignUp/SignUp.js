@@ -87,28 +87,49 @@ function SignUp() {
       <div>
         <Header />
       </div>
-      <section className="signupForm">
-        <h1>Sign Up</h1>
-        <form onSubmit={handleSignup}>
-          <div className="form-group">
-            Username: <input type="text" name="username" />
-          </div>
-          <div className="form-group">
-            Name: <input type="text" name="name" />
-          </div>
-          <div className="form-group">
-            Password: <input type="password" name="password" />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Signup
-          </button>
-        </form>
+      <div className="signupIntro">
+        <h1 className="signupForm__title">Sign Up</h1>
+        <p>
+          <b> Create your account using the details below:</b>
+        </p>
+      </div>
 
-        <div>
-          <GoogleLogin />
-        </div>
-        <div>
-          <GoogleLogout />
+      <section className="signupForm">
+        <div className="signupForm__wrap">
+          <form onSubmit={handleSignup}>
+            <div className="form-group">
+              Username:{" "}
+              <input
+                className="signupForm__inputs"
+                type="text"
+                name="username"
+              />
+            </div>
+            <div className="form-group">
+              Name:{" "}
+              <input className="signupForm__inputs" type="text" name="name" />
+            </div>
+            <div className="form-group">
+              Password:{" "}
+              <input
+                className="signupForm__inputs"
+                type="password"
+                name="password"
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Signup
+            </button>
+          </form>
+
+          <div>
+            <p>
+              <b>Or sign up using Google:</b>
+            </p>
+            <div className="google">
+              <GoogleLogin />
+            </div>
+          </div>
         </div>
       </section>
       <div>
@@ -135,11 +156,11 @@ function SignUp() {
           <button type="submit" className="btn btn-primary">
             Login
           </button>
-          <div>
-            <Footer />
-          </div>
         </form>
       </section>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 

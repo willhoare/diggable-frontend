@@ -20,7 +20,7 @@
   &__imagewrap {
     display: flex;
     justify-content: center;
-    box-shadow: 10px 5px 5px $secondary-color-2;
+    box-shadow: 0px 5px 5px $secondary-color-2;
   }
 }
 
@@ -81,4 +81,41 @@
   font-size: large;
   background-color: grey;
   color: white;
+}
+
+.editCampaign {
+  border-radius: 1em;
+  background-color: rgb(183, 31, 31);
+  // background-image: url(../../assets/icons/edit.png);
+  background-position: 5%;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: right;
+  border: none;
+  width: 100%;
+  background-repeat: no-repeat;
+
+  background-size: contain;
+  padding: 1em;
+  background-position: 12%;
+  font-size: large;
+  text-align: center;
+  margin: auto;
+  margin: 0em;
+  display: flex;
+  justify-content: space-evenly;
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    margin-inline: 15%;
+  }
+
+  &__icon {
+    max-height: 2em;
+  }
+}
+
+.editCampaign:hover {
+  background-color: rgb(133, 31, 31);
 }

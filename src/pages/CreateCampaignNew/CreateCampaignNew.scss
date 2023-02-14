@@ -36,9 +36,12 @@
 
 .description {
   height: 6em;
+  border-radius: 1rem;
+  border: none;
+  width: 100%;
 }
 
-input {
+.campaignInput {
   border-radius: 1rem;
   border: none;
   width: 100%;
@@ -46,6 +49,8 @@ input {
 
 .value {
   width: 20%;
+  border-radius: 1rem;
+  border: none;
 }
 
 .button {

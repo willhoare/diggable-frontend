@@ -76,6 +76,8 @@
 
   &__login {
     margin-inline: 13rem;
+    display: flex;
+    justify-content: flex-end !important;
   }
 }
 

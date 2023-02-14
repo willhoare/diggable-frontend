@@ -91,13 +91,20 @@ function SignUp() {
         <h1>Sign Up</h1>
         <form onSubmit={handleSignup}>
           <div className="form-group">
-            Username: <input type="text" name="username" />
+            Username:{" "}
+            <input className="signupForm__inputs" type="text" name="username" />
           </div>
           <div className="form-group">
-            Name: <input type="text" name="name" />
+            Name:{" "}
+            <input className="signupForm__inputs" type="text" name="name" />
           </div>
           <div className="form-group">
-            Password: <input type="password" name="password" />
+            Password:{" "}
+            <input
+              type="password"
+              className="signupForm__inputs"
+              name="password"
+            />
           </div>
           <button type="submit" className="btn btn-primary">
             Signup
@@ -127,10 +134,16 @@ function SignUp() {
         {isLoginError && <label className="error">{errorMessage}</label>}
         <form onSubmit={handleLogin}>
           <div className="form-group">
-            Username: <input type="text" name="username" />
+            Username:{" "}
+            <input type="text" className="signinForm__inputs" name="username" />
           </div>
           <div className="form-group">
-            Password: <input type="password" name="password" />
+            Password:{" "}
+            <input
+              type="password"
+              className="signinForm__inputs"
+              name="password"
+            />
           </div>
           <button type="submit" className="btn btn-primary">
             Login

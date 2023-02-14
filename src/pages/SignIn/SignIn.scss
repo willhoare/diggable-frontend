@@ -1,13 +1,27 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.signupForm {
+.signinForm {
   background-color: $primary-color-1;
   display: flex;
   justify-content: center;
+  padding: 3em;
 
-  @include tablet {
-    margin-left: 5rem;
-    margin-top: 2rem;
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__inputs {
+    border-radius: 1rem;
+    border: none;
+    width: 60%;
   }
 }

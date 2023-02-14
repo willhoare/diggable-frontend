@@ -33,7 +33,8 @@
 
 .diggButton {
   border-radius: 2em;
-  background-color: black;
+  background-color: grey;
+  border: none;
   width: 85%;
   height: 2em;
   font-size: 100%;
@@ -52,7 +53,7 @@
 }
 
 .diggButton:hover {
-  background-color: grey;
+  background-color: black;
   transform: scale(1.1);
 }
 .rewards__card:hover {

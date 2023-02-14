@@ -10,6 +10,7 @@ import Rewards from "../../components/Rewards/Rewards";
 import { ProgressBar, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "../../components/Modal/Modal";
+import editIcon from "../../assets/icons/edit.png";
 
 export default CampaignPage;
 
@@ -79,7 +80,7 @@ function CampaignPage() {
             </div>
             <div className="goal">
               <h1>
-                {currentArtist.artistname} have so far raised ${totalRaised} &
+                {currentArtist.artistname} have so far raised ${totalRaised} and{" "}
                 {progress}% of their goal!
               </h1>
               <div className="progressbar">
@@ -93,6 +94,12 @@ function CampaignPage() {
         </section>
         <div className="sidebarRewards">
           <article className="sidebar">
+            <div className="editCampaign__wrap">
+              <button className="editCampaign">
+                <img src={editIcon} className="editCampaign__icon" />
+                Edit
+              </button>
+            </div>
             <div className="sidebar__image">
               <img className="profilephoto" src={currentArtist.image} />
             </div>

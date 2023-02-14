@@ -36,18 +36,8 @@ function HomePage() {
   return (
     <>
       <Header />
-      {/* <BurgerBar /> */}
       <Introduction />
       <CarouselComponent artistList={artistList} />
-      {/* <div className="headline">
-        <h1>Featured Artists</h1>
-      </div>
-      <div className="allArtists__wrap">
-        <div className="allArtists">
-          <ArtistCard artistList={artistList} />
-        </div>
-      </div> */}
-
       <div>
         <Footer />
       </div>

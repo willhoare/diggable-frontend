@@ -41,7 +41,7 @@ function Header() {
           <NavLink to="/createcampaign">
             <h2>CREATE CAMPAIGN</h2>
           </NavLink>
-          <h2>NEWS</h2>
+          {/* <h2>NEWS</h2> */}
           <NavLink to="/allcampaigns">
             <h2>CAMPAIGNS</h2>
           </NavLink>
