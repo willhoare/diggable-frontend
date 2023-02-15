@@ -106,7 +106,7 @@ function SignUp() {
               name="password"
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="signButton">
             Signup
           </button>
         </form>
@@ -145,7 +145,7 @@ function SignUp() {
               name="password"
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="signButton">
             Login
           </button>
           <div>

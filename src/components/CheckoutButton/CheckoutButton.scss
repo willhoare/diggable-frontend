@@ -1,0 +1,25 @@
+.diggButton {
+  border-radius: 2em;
+  background-color: grey;
+  border: none;
+  width: 85%;
+  height: 2em;
+  font-size: 100%;
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+  display: flex;
+  text-transform: uppercase;
+  transition: all 0.1s ease-in-out;
+
+  &__wrap {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.diggButton:hover {
+  background-color: black;
+  transform: scale(1.1);
+}

@@ -83,9 +83,23 @@ function CampaignPage() {
                 {currentArtist.artistname} have so far raised ${totalRaised} and{" "}
                 {progress}% of their goal!
               </h1>
+
               <div className="progressbar">
                 <ProgressBar animated now={progress} />
               </div>
+            </div>
+
+            <div>
+              <iframe
+                // style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/4ZuC5MfGjRQs3pZtPxqMYP?utm_source=generator"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
             </div>
             <div className="campaignOverview">
               <h2>{currentArtist.campaigns[0].description}</h2>

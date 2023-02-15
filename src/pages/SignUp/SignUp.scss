@@ -53,3 +53,20 @@
   margin-bottom: 0;
   padding: 5em;
 }
+
+.signButton {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  background-color: black;
+  border-radius: 2rem;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.signButton:hover {
+  background-color: grey;
+}

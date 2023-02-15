@@ -49,7 +49,7 @@
 .menu {
   width: 50%;
   height: 100%;
-  background-color: $primary-color-2;
+  background-color: darkgrey;
   position: absolute;
   top: 0;
   z-index: 0;
@@ -97,7 +97,6 @@
 
 .burgerNavlinks {
   color: white !important;
-  background-color: red;
   margin-inline: 19%;
   display: flex;
   justify-content: end;

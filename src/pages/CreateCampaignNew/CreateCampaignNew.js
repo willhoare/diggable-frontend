@@ -53,6 +53,8 @@ export default function CreateCampaignNew() {
       await axios.post("http://localhost:8080/artists", formData);
     };
     sendData();
+    alert("Uploaded successfully!");
+    window.location = "/allcampaigns";
   }
 
   return (

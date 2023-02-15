@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.profile {
+.payment {
   display: flex;
   flex-direction: column;
 
@@ -18,7 +18,7 @@
         rgba(142, 116, 131, 0.3),
         rgba(78, 73, 21, 0.3)
       ),
-      url("../../assets/images/the-keening-voice-of-joni-mitchell-draws-listeners-from-news-photo-1579467255.jpeg");
+      url("../../assets/images/05hiphop15-jumbo.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -66,6 +66,6 @@
   }
 }
 
-.introduction__buttons:hover {
+.paymeny__buttons:hover {
   background-color: grey;
 }

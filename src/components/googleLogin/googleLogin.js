@@ -6,6 +6,8 @@ const clientId =
 function googleLogin() {
   const onSuccess = (res) => {
     console.log("LOGIN SUCCESS! Current user:", res.profileObj);
+    alert("Logged in Successfully!");
+    window.location = "/allcampaigns";
   };
 
   const onFailure = (res) => {

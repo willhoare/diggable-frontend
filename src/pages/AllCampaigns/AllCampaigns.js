@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 // import { useParams } from "react-router-dom";
-// import "./HomePage.scss";
+import "./AllCampaigns.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
@@ -31,6 +31,19 @@ function AllCampaigns() {
   return (
     <>
       <Header />
+
+      <article className="allCampaigns">
+        <div className="allCampaigns__content">
+          <h2 className="allCampaigns__header">Find the next Big thing.</h2>
+          <p className="allCampaigns__paragraph">
+            Browse all of the live current campaigns. Each artist below gives a
+            littl more information on their background and why they are looking
+            to raise funds and offer some exclusive rewards available to you to
+            help them reach their goal.
+            <br /> Digg deep!
+          </p>
+        </div>
+      </article>
       <div className="headline">
         <h1>Featured Artists</h1>
       </div>
