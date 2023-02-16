@@ -11,7 +11,6 @@ import {
 import HomePage from "./pages/HomePage/HomePage";
 // import SignIn from "./pages/SignIn/SignIn";
 import CampaignPage from "./pages/CampaignPage/CampaignPage";
-import CreateCampaign from "./pages/CreateCampaign/CreateCampaign";
 import AllCampaigns from "./pages/AllCampaigns/AllCampaigns";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
@@ -32,7 +31,6 @@ function App() {
           <Route path="/artists" element={<HomePage />} />
           <Route path="/artists/:id" element={<CampaignPage />} />
           <Route path="/allcampaigns" element={<AllCampaigns />} />
-          <Route path="/allcampaigns/:id" element={<CreateCampaign />} />
           <Route path="/createcampaign" element={<CreateCampaignNew />} />
 
           <Route path="/signup" element={<SignUp />}></Route>

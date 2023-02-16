@@ -7,7 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import beatles from "../../assets/images/284152.jpeg";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Rewards from "../../components/Rewards/Rewards";
-import { ProgressBar, Button } from "react-bootstrap";
+import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "../../components/Modal/Modal";
 import editIcon from "../../assets/icons/edit.png";
@@ -36,34 +36,12 @@ function CampaignPage() {
     return <h1 className="Loading">Loading...</h1>;
   }
 
-  // const navigate = useNavigate();
-
-  // function clickHandler() {
-  //   navigate(`/${id}/edit`);
-  // }
-
-  // let totalRaised =(current)
-  // let totalRaised =
-  //   (currentArtist.campaigns[0].totalRaised / currentArtist.campaigns[0].goal) *
-  //   100;
   let totalRaised = currentArtist.campaigns[0].totalRaised;
-  console.log(currentArtist.image);
-
-  // function progress(num, per) {
-  //   return (num / 100) * per;
-  // }
-
-  // console.log(progress(totalRaised, currentArtist.goal));
 
   let progress = (100 / currentArtist.campaigns[0].goal) * totalRaised;
 
-  console.log(currentArtist.campaigns[0].goal);
-  console.log(progress);
-
   return (
     <>
-      {/* <Modal /> */}
-
       <header>
         <Header />
       </header>
@@ -91,8 +69,7 @@ function CampaignPage() {
 
             <div>
               <iframe
-                // style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/4ZuC5MfGjRQs3pZtPxqMYP?utm_source=generator"
+                src="https://open.spotify.com/embed/track/7CLzqUggnD6KW5q8GG95ja?utm_source=generator"
                 width="100%"
                 height="352"
                 frameBorder="0"

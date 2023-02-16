@@ -1,5 +1,4 @@
 import "./Introduction.scss";
-import background from "../../assets/images/package.jpeg";
 import { Link } from "react-router-dom";
 
 function Introduction() {
@@ -11,7 +10,7 @@ function Introduction() {
             <h1 className="introduction__header">Find it first on Diggable.</h1>
             <h2 className="introduction__content">
               Diggable is where music fans seeking to support the next big thing
-              and find lively, exciting music artists before they hit the
+              can find fresh, exciting music artists before they hit the
               mainstream and help support them along the way.
             </h2>
             <Link to={`/allcampaigns/`}>

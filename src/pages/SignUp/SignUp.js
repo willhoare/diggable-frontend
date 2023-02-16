@@ -30,8 +30,6 @@ function SignUp() {
     gapi.load("client:auth2", start);
   });
 
-  ////
-
   const handleSignup = (e) => {
     e.preventDefault();
 

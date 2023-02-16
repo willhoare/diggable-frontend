@@ -1,11 +1,9 @@
 import "./CreateCampaignNew.scss";
-import "../CreateCampaign/bootstrap.min.css";
+import "../CreateCampaignNew/bootstrap.min.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-
-// trying to add the upload image functionality //
 
 export default function CreateCampaignNew() {
   const [image, setImage] = useState(null);

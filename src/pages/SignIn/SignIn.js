@@ -43,7 +43,6 @@ function SignUp() {
     console.log(name);
     console.log(password);
 
-    // Here send a POST request to signupUrl with username, name and password data
     axios
       .post("http://localhost:8080/signup", {
         username,
@@ -61,7 +60,6 @@ function SignUp() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Here send a POST request to loginUrl with username and password data
     const username = e.target.username.value;
     const password = e.target.password.value;
 

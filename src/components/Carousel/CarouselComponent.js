@@ -22,10 +22,6 @@ function CarouselComponent() {
     return <h1 className="Loading">Loading...</h1>;
   }
 
-  // let artistImage = artistList[0].campaigns.heroImage;
-
-  // console.log(artistImage);
-
   return (
     <div>
       <Carousel>

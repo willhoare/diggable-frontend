@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom";
 import "./AllCampaigns.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -25,8 +23,6 @@ function AllCampaigns() {
   if (!artistList) {
     return <h1 className="Loading">Loading...</h1>;
   }
-  // return artistList.map((artist) => {
-  //   let id = artist.id;
 
   return (
     <>

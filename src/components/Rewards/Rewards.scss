@@ -9,8 +9,6 @@
   }
 
   &__card {
-    // border: $primary-color-1 solid 2px;
-    // background-color: $secondary-color-1;
     color: $primary-color-2;
     text-align: center;
     display: flex;
@@ -20,7 +18,7 @@
     margin: 5%;
     height: 100%;
     padding: 5%;
-    border-top-right-radius: 8rem;
+    border-top-right-radius: 1em;
     transition: all 0.1s ease-in-out;
     box-shadow: 10px 5px 5px $secondary-color-2;
   }

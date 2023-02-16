@@ -76,18 +76,18 @@
 }
 
 .campaignOverview {
+  margin-top: 3em;
   padding: 5%;
   font-size: large;
-  background-color: grey;
-  color: white;
+  color: black;
   max-width: 50em;
-  border-radius: 1em;
+  border-top-right-radius: 1em;
+  box-shadow: -15px -12px $primary-color-2;
 }
 
 .editCampaign {
   border-radius: 1em;
   background-color: rgb(183, 31, 31);
-  // background-image: url(../../assets/icons/edit.png);
   background-position: 5%;
   background-repeat: no-repeat;
   color: white;
