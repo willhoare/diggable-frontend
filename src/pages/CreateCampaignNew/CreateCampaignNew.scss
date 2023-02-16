@@ -1,0 +1,95 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form {
+  background-color: $primary-color-1;
+  margin-top: 0rem;
+  padding-top: 2em;
+  margin-bottom: 0rem;
+  display: flex;
+  justify-content: center;
+
+  &__wrap {
+    flex-direction: column;
+    display: flex;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__element {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1em;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.description {
+  height: 6em;
+  border-radius: 1rem;
+  border: none;
+  width: 100%;
+}
+
+.campaignInput {
+  border-radius: 1rem;
+  border: none;
+  width: 100%;
+}
+
+.value {
+  width: 20%;
+  border-radius: 1rem;
+  border: none;
+}
+
+.button {
+  border: none;
+  border-radius: 1em;
+  height: 5em;
+  width: 15em;
+
+  &__wrap {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3em;
+  }
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+  color: white;
+  background-image: url();
+  background: linear-gradient(
+      0deg,
+      rgba(142, 116, 131, 0.3),
+      rgba(78, 73, 21, 0.3)
+    ),
+    url("../../assets/images/bob-marley-performs-live-on-stage-with-the-wailers-in-news-photo-1579010834.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__header {
+  }
+
+  &__paragraph {
+    padding: 2em;
+  }
+
+  &__content {
+    text-align: center;
+  }
+}

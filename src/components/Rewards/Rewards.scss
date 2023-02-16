@@ -1,0 +1,61 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.rewards {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__card {
+    color: $primary-color-2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    justify-content: center;
+    margin: 5%;
+    height: 100%;
+    padding: 5%;
+    border-top-right-radius: 1em;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 10px 5px 5px $secondary-color-2;
+  }
+
+  &__value {
+    font-weight: bold;
+    font-size: 200%;
+  }
+}
+
+.diggButton {
+  border-radius: 2em;
+  background-color: grey;
+  border: none;
+  width: 85%;
+  height: 2em;
+  font-size: 100%;
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+  display: flex;
+  text-transform: uppercase;
+  transition: all 0.1s ease-in-out;
+
+  &__wrap {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.diggButton:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+.rewards__card:hover {
+  background-color: $primary-color-1;
+  border-color: $secondary-color-1;
+  transform: scale(1.1);
+}

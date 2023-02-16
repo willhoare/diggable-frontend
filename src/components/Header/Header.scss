@@ -1,0 +1,227 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @include tablet {
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    margin-inline: 5rem;
+  }
+
+  &__textlogowrap {
+    height: 15rem;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    background-color: $primary-color-1;
+
+    @include tablet {
+      order: 0;
+      box-shadow: 2px rgba(0, 0, 0, 0.4);
+      // border-left: 1px solid grey;
+      width: 38rem;
+      // border-right: 1px solid grey;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+  }
+
+  &__textlogo {
+    height: 75%;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 40%;
+  }
+
+  &__visuallogowrap {
+    height: 13rem;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+
+    @include tablet {
+      order: 1;
+    }
+  }
+  &__visuallogo {
+    height: 12rem;
+  }
+}
+
+.navbar {
+  background-color: $primary-color-1;
+  display: flex;
+  // flex-direction: row !important;
+  justify-content: space-between;
+  flex-wrap: nowrap !important;
+  border-bottom: $primary-color-2 3px solid;
+
+  @include mobile {
+    display: none !important;
+  }
+
+  &__pages {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-inline: 5rem;
+  }
+
+  &__login {
+    margin-inline: 13rem;
+    display: flex;
+    justify-content: flex-end !important;
+  }
+}
+
+// .navbar__page:hover {
+//   background-color: $primary-color-2;
+//   color: white;
+//   padding-left: 2rem;
+//   padding-right: 2rem;
+// }
+
+// .navbar__login:hover {
+//   background-color: $primary-color-2;
+//   color: white;
+//   padding-left: 2rem;
+//   padding-right: 2rem;
+// }
+
+.pullUp h2:before {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0px;
+  bottom: 0px;
+  content: "";
+  background: #fff;
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+
+.pullUp h2:hover:before {
+  height: 100%;
+}
+
+div.container {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  width: 80rem;
+  justify-content: end;
+}
+
+div.container h2 {
+  color: $primary-color-2;
+  text-decoration: none;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  // z-index: 0;
+  cursor: pointer;
+  // width: 20rem;
+}
+
+.header__textlogowrap {
+  position: relative;
+  animation-name: logo;
+  animation-duration: 0.5s;
+}
+
+@keyframes logo {
+  0% {
+    height: 0.5rem;
+  }
+}
+
+@include tablet {
+  @keyframes logo {
+    0% {
+      top: -200px;
+    }
+    5% {
+      top: -190px;
+    }
+    10% {
+      top: -180px;
+    }
+    15% {
+      top: -170px;
+    }
+    20% {
+      top: -160px;
+    }
+    25% {
+      top: -150px;
+    }
+    30% {
+      top: -140px;
+    }
+    35% {
+      top: -130px;
+    }
+    40% {
+      top: -120px;
+    }
+    45% {
+      top: -110px;
+      padding: 2px;
+    }
+    50% {
+      top: -100px;
+      padding: 4px;
+    }
+    55% {
+      top: -90px;
+      padding: 6px;
+    }
+    60% {
+      top: -80px;
+      padding: 8px;
+    }
+    65% {
+      top: -70px;
+      padding: 10px;
+    }
+    70% {
+      top: -60px;
+      padding: 12px;
+    }
+    75% {
+      top: -50px;
+      padding: 10px;
+    }
+    80% {
+      top: -40px;
+      padding: 8px;
+    }
+    85% {
+      top: -30px;
+      padding: 6px;
+    }
+    90% {
+      top: -20px;
+      padding: 4px;
+    }
+    95% {
+      top: -10px;
+      padding: 2px;
+    }
+    100% {
+      top: 0px;
+      padding: 1px;
+    }
+  }
+}
+
+.header__textlogowrap:hover {
+  padding: 1rem;
+}

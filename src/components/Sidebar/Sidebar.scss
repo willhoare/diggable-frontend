@@ -1,0 +1,18 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.sidebar__description {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem;
+  border: solid white px;
+  border-radius: 9rem;
+  background-color: $primary-color-2;
+  height: 100%;
+  box-shadow: 10px 5px 5px $secondary-color-2;
+}

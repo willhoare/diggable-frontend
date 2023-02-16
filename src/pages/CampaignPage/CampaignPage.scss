@@ -1,0 +1,122 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @include tablet {
+    margin-left: 5rem;
+    justify-content: flex-start;
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 40em;
+    border-bottom: solid $secondary-color-1 5px;
+  }
+
+  &__imagewrap {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 5px 5px $secondary-color-2;
+  }
+}
+
+.sidebar {
+  flex-direction: row;
+  margin: 10%;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    max-height: 100%;
+  }
+}
+
+.pageorder {
+  display: flex;
+  margin: 5%;
+}
+
+.sidebarRewards {
+  width: 100%;
+  color: white;
+  border-color: $secondary-color-1 2rem solid;
+  flex-direction: column;
+
+  @include tablet {
+    width: 50%;
+    margin-top: 5%;
+  }
+}
+
+.contentdivider {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.profilephoto {
+  border-radius: 5%;
+  max-height: 20em;
+  max-width: 100%;
+  margin: 2rem;
+  box-shadow: 3px 9px 8px $secondary-color-2;
+}
+
+.goal {
+  margin: 5rem;
+  justify-content: center;
+}
+
+.campaignOverview {
+  margin-top: 3em;
+  padding: 5%;
+  font-size: large;
+  color: black;
+  max-width: 50em;
+  border-top-right-radius: 1em;
+  box-shadow: -15px -12px $primary-color-2;
+}
+
+.editCampaign {
+  border-radius: 1em;
+  background-color: rgb(183, 31, 31);
+  background-position: 5%;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: right;
+  border: none;
+  width: 100%;
+  background-repeat: no-repeat;
+
+  background-size: contain;
+  padding: 1em;
+  background-position: 12%;
+  font-size: large;
+  text-align: center;
+  margin: auto;
+  margin: 0em;
+  display: flex;
+  justify-content: space-evenly;
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    margin-inline: 15%;
+  }
+
+  &__icon {
+    max-height: 2em;
+  }
+}
+
+.editCampaign:hover {
+  background-color: rgb(133, 31, 31);
+}

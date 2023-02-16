@@ -1,0 +1,26 @@
+.allCampaigns {
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+  color: white;
+  background-image: url();
+  background: linear-gradient(
+      0deg,
+      rgba(142, 116, 131, 0.3),
+      rgba(78, 73, 21, 0.3)
+    ),
+    url("../../assets/images/sub-buzz-1224-1568669101-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__header {
+  }
+
+  &__paragraph {
+    padding: 2em;
+  }
+
+  &__content {
+    text-align: center;
+  }
+}
