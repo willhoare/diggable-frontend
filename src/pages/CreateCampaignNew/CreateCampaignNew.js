@@ -60,7 +60,7 @@ export default function CreateCampaignNew() {
       <Header />
       <article className="intro">
         <div className="intro__content">
-          <h2 className="intro__header">Bring your campaign to life.</h2>
+          <h1 className="intro__header">Bring your campaign to life.</h1>
           <p className="intro__paragraph">
             Launch you new live-music campaign today by filling out all the
             details below. This is your chance to give your fans and supporters

@@ -30,7 +30,7 @@ function AllCampaigns() {
 
       <article className="allCampaigns">
         <div className="allCampaigns__content">
-          <h2 className="allCampaigns__header">Find the next Big thing.</h2>
+          <h1 className="allCampaigns__header">Find the next Big thing.</h1>
           <p className="allCampaigns__paragraph">
             Browse all of the live current campaigns. Each artist below gives a
             littl more information on their background and why they are looking
