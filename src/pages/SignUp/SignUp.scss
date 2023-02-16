@@ -1,0 +1,72 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.signupForm {
+  background-color: $primary-color-1;
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__inputs {
+    border-radius: 1rem;
+    border: none;
+    width: 60%;
+  }
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.google {
+  display: flex;
+  justify-content: center;
+}
+
+.signupIntro {
+  background: linear-gradient(
+      0deg,
+      rgba(142, 116, 131, 0.5),
+      rgba(78, 73, 21, 0.5)
+    ),
+    url("../../assets/images/sub-buzz-1192-1568667837-1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 5em;
+}
+
+.signButton {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  background-color: black;
+  border-radius: 2rem;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.signButton:hover {
+  background-color: grey;
+}
