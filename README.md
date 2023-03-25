@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+This is the repo for the frontend portion of Diggable, a crowd-funding platform specifically targeted at Independent musicaians. Diggable aims to help alleviate the financial stress of touring by allowing artists to set a financial goal and offer unique rewards to their fans to help them reach that goal.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the Client side/frontend repo only, and should be ran in conjunctin with the backend repo which can be found at https://github.com/willhoare/diggable-server
 
-## Available Scripts
+This app was built using React, HTML, SASS and Bootstrap. All depdendencies will need to be installed by running 'npm i' in the terminal. 
+As the React Carousel I am using is deprecated, it may be necessary to run 'npm i --force' isntead, if you run into an error on the first try. 
+ 
+ 
+ Once all depdendencies have been installed, run 'npm start' in the terminal in order to launch the development server. 
+ 
+ The server will take you to the homepage of the app which gives an overview of the site and how it works. 
+ 
+ <img width="1279" alt="Screen Shot 2023-02-15 at 5 17 34 PM" src="https://user-images.githubusercontent.com/118302249/219193026-f2244e84-69d5-4e54-bd40-055471a7a713.png">
 
-In the project directory, you can run:
+ 
+ In order to create an account, navigate to the sign up page and enter a username and password or login using the Google authentication built in. 
+ 
+ <img width="1264" alt="Screen Shot 2023-02-15 at 5 18 38 PM" src="https://user-images.githubusercontent.com/118302249/219193376-61173edb-ef95-4509-b8ef-c6840e176dfc.png">
 
-### `npm start`
+ 
+ To browse live campaigns, go to the 'campaigns' tab. 
+ 
+ <img width="478" alt="Screen Shot 2023-02-15 at 5 19 07 PM" src="https://user-images.githubusercontent.com/118302249/219193697-512284e5-3663-4806-b79d-bc63ba2421e8.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ In order to create your own campaign, go to the 'create campaign tab'. Here you are required to upload as much background information as possible, as well as a hero image and at least 5 rewards on offer to your fans and an associated price
+ 
+<img width="1280" alt="Screen Shot 2023-02-15 at 5 19 38 PM" src="https://user-images.githubusercontent.com/118302249/219194088-8812750c-7722-4c29-a60f-fd3619232a8c.png">
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
