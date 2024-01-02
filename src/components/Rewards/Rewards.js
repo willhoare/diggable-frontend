@@ -3,8 +3,6 @@ import CheckoutButton from "../CheckoutButton/CheckoutButton";
 
 function Rewards({ currentArtist }) {
   return currentArtist.campaigns[0].rewards.map((rewards) => {
-    // let first = rewards.first;
-
     return (
       <section className="rewards__container">
         <div className="rewards__card">
