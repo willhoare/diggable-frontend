@@ -1,4 +1,8 @@
 import "./CarouselComponent.scss";
+import Flickity from "react-flickity-component";
+import "flickity/css/flickity.css"; // Import Flickity CSS
+import { Link } from "react-router-dom";
+
 import buzzcocks from "../../assets/GettyImages-84887506-696x442.jpeg";
 import beatles from "../../assets/images/284152.jpeg";
 import joydivision from "../../assets/images/Joy_Division_promo_photo.jpeg";
@@ -6,14 +10,31 @@ import { Carousel } from "react-bootstrap";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+function truncateDescription(description) {
+  if (description.length > 50) {
+    return description.slice(0, 50) + "...";
+  }
+  return description;
+}
+
 function CarouselComponent() {
   const [artistList, setArtistList] = useState([]);
   const artistUrl = "http://localhost:8080/artists";
 
+  const flickityOptions = {
+    wrapAround: true,
+    groupCells: true,
+  };
+
   useEffect(() => {
     const getArtists = async () => {
-      const { data } = await axios.get(artistUrl);
-      setArtistList(data);
+      try {
+        const { data } = await axios.get(artistUrl);
+        console.log(data); // Log the received data
+        setArtistList(data);
+      } catch (error) {
+        console.error("Error fetching artists:", error);
+      }
     };
     getArtists();
   }, []);
@@ -24,37 +45,27 @@ function CarouselComponent() {
 
   return (
     <div>
-      <Carousel>
-        <Carousel.Item>
-          <img className="d-block w-100" src={buzzcocks} alt="First slide" />
-          <Carousel.Caption>
-            <h1>The Buzzcocks</h1>
-            <p>Touring across Europe. 60% of Goal reached!</p>
-            <h3>Read More</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={beatles} alt="Second slide" />
-
-          <Carousel.Caption>
-            <h1>The Beatles</h1>
-            <p>Touring north America this summer. 75% of Goal reached!</p>
-            <h3>Read More</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src={joydivision} alt="Third slide" />
-
-          <Carousel.Caption>
-            <h1>Joy Division</h1>
-            <p>
-              Kicking off a US tour with dates across the East coas this fall.
-              90% of Goal reached!
-            </p>
-            <h3>Read More</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+      <Flickity options={flickityOptions}>
+        {artistList.map((artist, index) => (
+          <Link to={`/artists/${artist.id}`}>
+            <div key={index} className="carousel-cell">
+              <img
+                className="d-block w-100"
+                src={artist.image}
+                alt={artist.artistname}
+              />
+              <Carousel.Caption>
+                <h1>{artist.artistname}</h1>
+                <p>
+                  {truncateDescription(artist.campaigns[0].description)}
+                </p>{" "}
+                {/* Truncate description */}
+                <h3>Read More</h3>
+              </Carousel.Caption>
+            </div>
+          </Link>
+        ))}
+      </Flickity>
     </div>
   );
 }
