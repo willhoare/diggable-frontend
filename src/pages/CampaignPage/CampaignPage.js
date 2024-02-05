@@ -29,8 +29,6 @@ function CampaignPage() {
     getArtist();
   }, [id]);
 
-  console.log(currentArtist);
-
   if (!currentArtist) {
     return <h1 className="Loading">Loading...</h1>;
   }
@@ -42,6 +40,8 @@ function CampaignPage() {
   let progress = campaignExists
     ? (100 / currentArtist.campaigns[0].goal) * totalRaised
     : 0;
+
+  console.log(currentArtist.image);
 
   return (
     <>
