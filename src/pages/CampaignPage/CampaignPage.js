@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./CampaignPage.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import beatles from "../../assets/images/284152.jpeg";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Rewards from "../../components/Rewards/Rewards";
 import { ProgressBar } from "react-bootstrap";
@@ -12,95 +11,73 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "../../components/Modal/Modal";
 import editIcon from "../../assets/icons/edit.png";
 
-export default CampaignPage;
-
 function CampaignPage() {
   const BASE_API_URL = "http://localhost:8080/artists";
   const [currentArtist, setCurrentArtist] = useState(null);
-
   const { id } = useParams();
 
   useEffect(() => {
-    try {
-      async function getArtist() {
+    const getArtist = async () => {
+      try {
         const { data } = await axios.get(`${BASE_API_URL}/${id}`);
         setCurrentArtist(data);
+        console.log("Artist Data:", data); // Add this console.log
+      } catch (error) {
+        console.error("Error fetching artist:", error);
       }
-      getArtist();
-    } catch (error) {
-      console.log(error);
-    }
+    };
+    getArtist();
   }, [id]);
+
+  console.log(currentArtist);
 
   if (!currentArtist) {
     return <h1 className="Loading">Loading...</h1>;
   }
 
-  let totalRaised = currentArtist.campaigns[0].totalRaised;
-
-  let progress = (100 / currentArtist.campaigns[0].goal) * totalRaised;
+  // Check if campaigns exist and have at least one item
+  const campaignExists =
+    currentArtist.campaigns && currentArtist.campaigns.length > 0;
+  let totalRaised = campaignExists ? currentArtist.campaigns[0].totalRaised : 0;
+  let progress = campaignExists
+    ? (100 / currentArtist.campaigns[0].goal) * totalRaised
+    : 0;
 
   return (
     <>
-      <header>
-        <Header />
-      </header>
-
+      <Header />
       <div className="contentdivider">
         <section className="pageorder">
           <div className="hero">
-            <div className="hero__imagewrap">
-              <img
-                className="hero__image"
-                src={currentArtist.image}
-                alt=" current displayed band, add in as template literal later"
-              />
-            </div>
+            <img
+              className="hero__image"
+              src={currentArtist.image}
+              alt="current displayed band"
+            />
             <div className="goal">
               <h1>
                 {currentArtist.artistname} have so far raised ${totalRaised} and{" "}
                 {progress}% of their goal!
               </h1>
-
-              <div className="progressbar">
-                <ProgressBar animated now={progress} />
+              <ProgressBar animated now={progress} />
+            </div>
+            <iframe
+              src="https://open.spotify.com/embed/track/7CLzqUggnD6KW5q8GG95ja?utm_source=generator"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+            {campaignExists && (
+              <div className="campaignOverview">
+                <h2>{currentArtist.campaigns[0].description}</h2>
               </div>
-            </div>
-
-            <div>
-              <iframe
-                src="https://open.spotify.com/embed/track/7CLzqUggnD6KW5q8GG95ja?utm_source=generator"
-                width="100%"
-                height="352"
-                frameBorder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              ></iframe>
-            </div>
-            <div className="campaignOverview">
-              <h2>{currentArtist.campaigns[0].description}</h2>
-            </div>
+            )}
           </div>
         </section>
-        <div className="sidebarRewards">
-          <article className="sidebar">
-            <div className="editCampaign__wrap">
-              <button className="editCampaign">
-                <img src={editIcon} className="editCampaign__icon" />
-                Edit
-              </button>
-            </div>
-            <div className="sidebar__image">
-              <img className="profilephoto" src={currentArtist.image} />
-            </div>
-            <Sidebar currentArtist={currentArtist} />
-          </article>
-        </div>
+        <Sidebar currentArtist={currentArtist} />
       </div>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </>
   );
 }
+
+export default CampaignPage;

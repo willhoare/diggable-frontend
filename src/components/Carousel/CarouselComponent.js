@@ -1,12 +1,7 @@
 import "./CarouselComponent.scss";
 import Flickity from "react-flickity-component";
-import "flickity/css/flickity.css"; // Import Flickity CSS
+import "flickity/css/flickity.css";
 import { Link } from "react-router-dom";
-
-import buzzcocks from "../../assets/GettyImages-84887506-696x442.jpeg";
-import beatles from "../../assets/images/284152.jpeg";
-import joydivision from "../../assets/images/Joy_Division_promo_photo.jpeg";
-import { Carousel } from "react-bootstrap";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -22,15 +17,18 @@ function CarouselComponent() {
   const artistUrl = "http://localhost:8080/artists";
 
   const flickityOptions = {
+    freeScroll: true,
     wrapAround: true,
+    draggable: true,
     groupCells: true,
+    pageDots: false,
   };
 
   useEffect(() => {
     const getArtists = async () => {
       try {
         const { data } = await axios.get(artistUrl);
-        console.log(data); // Log the received data
+        console.log(data);
         setArtistList(data);
       } catch (error) {
         console.error("Error fetching artists:", error);
@@ -47,21 +45,23 @@ function CarouselComponent() {
     <div>
       <Flickity options={flickityOptions}>
         {artistList.map((artist, index) => (
-          <Link to={`/artists/${artist.id}`}>
-            <div key={index} className="carousel-cell">
+          <Link to={`/artists/${artist.id}`} key={index}>
+            <div className="carousel-cell">
               <img
                 className="d-block w-100"
                 src={artist.image}
                 alt={artist.artistname}
               />
-              <Carousel.Caption>
+              <div className="carousel-caption">
                 <h1>{artist.artistname}</h1>
+                {/* Check if campaigns exist and have at least one item */}
                 <p>
-                  {truncateDescription(artist.campaigns[0].description)}
-                </p>{" "}
-                {/* Truncate description */}
+                  {artist.campaigns && artist.campaigns.length > 0
+                    ? truncateDescription(artist.campaigns[0].description)
+                    : "No campaign information available."}
+                </p>
                 <h3>Read More</h3>
-              </Carousel.Caption>
+              </div>
             </div>
           </Link>
         ))}
@@ -69,7 +69,5 @@ function CarouselComponent() {
     </div>
   );
 }
-
-// return artistCard;
 
 export default CarouselComponent;
